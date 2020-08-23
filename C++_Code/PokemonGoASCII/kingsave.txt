@@ -1,0 +1,4 @@
+openingArea.txt
+44 7
+10
+0

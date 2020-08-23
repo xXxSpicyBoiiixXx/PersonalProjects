@@ -1,0 +1,150 @@
+# depslib dependency file v1.0
+1480469210 source:c:\users\dan_l\desktop\pokemongoascii\main.cpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+	"Graphics.h"
+
+1480469210 h"
+
+1478800073 source:c:\users\dan_l\desktop\pokemongoascii\plotter.cpp
+	<iostream>
+	"plotter.h"
+
+1480220132 "
+
+1480007488 c:\users\dan_l\desktop\pokemongoascii\plotter.h
+	<windows.h>
+	<mmsystem.h>
+	<conio.h>
+
+1480470536 
+
+1480220988 c:\users\dan_l\desktop\pokemongoascii\pokemon.h
+	<iostream>
+	<string>
+	"Background.h"
+	"Sprite.h"
+
+1480467472 
+
+1480220132 source:c:\users\dan_l\desktop\pokemongoascii\pokemon.cpp
+	"Pokemon.h"
+
+1480385211 source:c:\users\dan_l\desktop\pokemongoascii\background.cpp
+	"Background.h"
+
+1480385211 d.h"
+
+1480385211 c:\users\dan_l\desktop\pokemongoascii\background.h
+	"plotter.h"
+	"Sprite.h"
+	<string>
+	<fstream>
+	<vector>
+	<stdlib.h>
+	<time.h>
+
+1480215498 source:c:\users\dan_l\desktop\pokemongoascii\clearcursor.cpp
+	<windows.h>
+
+1480215498 >
+
+1480470243 source:c:\users\dan_l\desktop\pokemongoascii\sprite.cpp
+	"Sprite.h"
+
+1480470175 c:\users\dan_l\desktop\pokemongoascii\sprite.h
+	"plotter.h"
+	<stdlib.h>
+	<time.h>
+	<string>
+	<fstream>
+
+1480269681 source:c:\users\dan_l\desktop\pokemongoascii\game.cpp
+	"Game.h"
+
+1480269534 c:\users\dan_l\desktop\pokemongoascii\game.h
+	<windows.h>
+	"Background.h"
+	"Sprite.h"
+
+1480471010 source:c:\users\dan_l\desktop\pokemongoascii\graphics.cpp
+	"Graphics.h"
+	<iostream>
+
+1480471248 c:\users\dan_l\desktop\pokemongoascii\graphics.h
+	<windows.h>
+	"Background.h"
+	"Sprite.h"
+	"Event.h"
+
+1480470536 source:c:\users\dan_l\desktop\pokemongoascii\event.cpp
+	"Event.h"
+
+1480467472 c:\users\dan_l\desktop\pokemongoascii\event.h
+	<conio.h>
+	<fstream>
+	<string>
+	"plotter.h"
+	"Sprite.h"
+
+1480381612 source:/Users/spicyboiii/Desktop/PokemonGoASCII/Background.cpp
+	"Background.h"
+
+1480381612 /Users/spicyboiii/Desktop/PokemonGoASCII/Background.h
+	"plotter.h"
+	"Sprite.h"
+	<string>
+	<fstream>
+	<vector>
+	<stdlib.h>
+	<time.h>
+
+1480003890 /Users/spicyboiii/Desktop/PokemonGoASCII/plotter.h
+	<windows.h>
+	<mmsystem.h>
+	<conio.h>
+
+1480466576 /Users/spicyboiii/Desktop/PokemonGoASCII/Sprite.h
+	"plotter.h"
+	<stdlib.h>
+	<time.h>
+	<string>
+	<fstream>
+
+1480211900 source:/Users/spicyboiii/Desktop/PokemonGoASCII/ClearCursor.cpp
+	<windows.h>
+
+1480466938 source:/Users/spicyboiii/Desktop/PokemonGoASCII/Event.cpp
+	"Event.h"
+
+1480463874 /Users/spicyboiii/Desktop/PokemonGoASCII/Event.h
+	<conio.h>
+	<fstream>
+	<string>
+	"plotter.h"
+	"Sprite.h"
+
+1480467672 source:/Users/spicyboiii/Desktop/PokemonGoASCII/Graphics.cpp
+	"Graphics.h"
+	<iostream>
+
+1480467650 /Users/spicyboiii/Desktop/PokemonGoASCII/Graphics.h
+	<windows.h>
+	"Background.h"
+	"Sprite.h"
+	"Event.h"
+
+1480465612 source:/Users/spicyboiii/Desktop/PokemonGoASCII/main.cpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+	"Graphics.h"
+
+1478796474 source:/Users/spicyboiii/Desktop/PokemonGoASCII/plotter.cpp
+	<iostream>
+	"plotter.h"
+
+1480466644 source:/Users/spicyboiii/Desktop/PokemonGoASCII/Sprite.cpp
+	"Sprite.h"
+

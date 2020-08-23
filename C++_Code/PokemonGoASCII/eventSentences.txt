@@ -1,0 +1,6 @@
+You have encountered a wild
+-> Capture      Run
+   Capture   -> Run
+Throw a pokeball (Guess 1-5) or 'r' to run
+You caught
+It got away!
