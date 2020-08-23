@@ -1,5 +1,5 @@
 # Personal Projects
-This repo is where I'll upload personal and previous works of mine. 
+This repo is where I'll upload personal and previous works of mine. It is still in a work in progress as I have to go back and edit some codes and review it before uploading them. In the mean time, I would love to work on side projects, just message me :) 
 
 ## Uploads in Progress
 I am a bit late to the GitHub game, I will be uploading previous projects of mine as well as recreating certain codes/projects that will be helpful to me and the commnity as a whole. 
