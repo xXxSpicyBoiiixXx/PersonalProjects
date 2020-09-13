@@ -1,0 +1,185 @@
+% ****** Start of file Astrophyiscs1.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\begin{document}
+
+%\preprint{APS/123-QED}
+
+\title{Our Place in the Milky Way} % Force line breaks with \\
+\thanks{This is not a published article}%
+
+\author{Md Ali}
+ \email{mha27@txstat.edu}%Lines break automatically or can be forced with \\
+\author{Jason Trent}%
+ \email{jt1411@txstate.edu}
+\affiliation{%
+ Texas State University, Physics Department\\
+ PHYS 3313 Astrophyiscs
+}%
+
+\collaboration{Dank Boiiis Collaboration}%\noaffiliation
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+We investigated our position and the shape of the Milky Way using observations by William Herschel 
+and modern day observations of our stars. Using other stars and observing how they are clustered, 
+we can dictate our position within the milky way. Not only can we map our location, but we can determine
+the Milky Way's overall shape. The investigation overall provides a modern interpretation for Herschel's mapping of the 
+Milky Way and why it failed to accurately represent the size and shape of our galaxy.
+\end{abstract}
+
+\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
+                             % Classification Scheme.
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\tableofcontents
+
+\section{\label{sec:level1}Introduction}
+As you can imagine, finding our place in the Milky Way is an extremely difficult task. One can compare such a task to being tied to a tree in a very dense forest and trying to find the one's own location and the shape of the forest from being tied to said tree. William Herschel took on such a task by making his own reflecting telescopes in 1774, which later on led him to the discovery of Uranus in 1781. 
+This discovery secured him a position as a personal astronomer of King George III, and launched his career as being one of the 
+greatest astronomers of the 18th century. Although his discovery of the planet Uranus gained him fame, he devoted most of his 
+attention to the stars. From 1784-1785, he attempted to map out the shape of the Milky Way galaxy as shown in figure 1. The contributions 
+to this figure is the two assumptions Herschel made. The first assumption was that stars are distributed more or less uniformly within the Milky Way system and are not found beyond the boundaries of that system. The second assumption was that the telescope used for the star-gages is capable of resolving all stars within the Milky Way system. As you can see from figure 2, that Herschel was not completely wrong when it came to viewing the Milky Way compared to NASA's image taken by the satellite COBE. Also from figure 2, one can infer from the disk and center region of the Milky Way the shape of the Galaxy.  The purpose of this paper is to showcase Herschel's approach to mapping the Milky Way as well as using modern day technology to map out our location in the Milky Way. 
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2in]{Herschel_MW_1785_sm.jpg} 
+   \caption{Herschel's Milky Way Map}
+   \label{fig 1}
+\end{figure}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2in]{cobe_milkyway.jpg} 
+   \caption{NASA COBE project Milky Way Image}
+   \label{fig 2}
+\end{figure}
+
+\section{\label{sec:level2}Method}
+Looking at a data list, of Milky Way Globular Clusters, $http://www.messier.seds.org/xtra/supp/mw_gc.html$, from said data list we look at RA Dec (2000): right ascension and declination for epoch 2000.0, $Rsun, Rgc$: distance from our Sun and the Galactic Center in thousands of light years (kly), $m_v$: apparent visual magnitude, and dim: apparent dimension in arc minutes. From here we counted how many globular clusters are in each constellation as listed in the data. This was done using a C++ application to number off the constellation, then the application displayed the top three constellations with the most globular clusters. From the application I found that the top three constellations with the most globular clusters were, in descending order, Sagittarius, Ophiuchus, and Scorpius. From this, I concluded that globular clusters in these three constellations must be the center of the galaxy. As shown in figure 3, using TopCat I plotted all the clusters as is and I made the x, y, and z coordinates to zero, meaning that our solar system sits at the (0,0,0) coordinate. Also using Google Earth Pro sky map to more accurately cross check all our assumptions and constellations was used. Using Google Earth we mapped out the galactic center and saw how close each constellations when picking the location and distances from the galactic center. Google Earth was only used for verifications and viewing purposes only, no data was used in the methods below.
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2in]{Plot1.png} 
+   \caption{TopCat Image of Data Globular Clusters}
+   \label{fig 3}
+\end{figure}
+
+\subsection{\label{sec:level2}Assumption and Calculations}
+Our assumptions were that the distance from the center can be represented by a vector whose magnitude is the measured by every cluster point, mainly classified by constellations. Using each group constellations averaged distances from x, y, and z coordinates we proceeded to use basic geometry. The equation that can describe the geometric vector was using the distances between our solar system and respective clusters. let $r$ be the distant be from our solar system and the proposed cluster. Then $r^2 = x^2+y^2+z^2$. We then proceeded to code a program that would take all the clusters and their respective $x$, $y$, and $z$ distances in a text file. The program was also coded in C++ and with the given data we found that all three constellations that contained the most globular clusters solar system is approximately 8-10 kpc away from the center of the Milky Way. 
+
+\section{\label{sec:level3}Data}
+The data that was collected was from the one's provided from class through TRACS and the Milky Way Globular Clusters from June, 2011. Afterwards a C++ program was used to manipulate all the data, due to the large set of data points, to achieve all the distances and groupings. If you must see the code and it to run please let me know via email, mha27@txstate.edu, and I can forward you the .cpp file to compile for yourself while using a text file of your own data to achieve the output file you desire. The input will depend on your input data and how you classify each of your clusters, I did it by alphabetical rearranging the order from the data set to simplify counting the different constellations and their groupings.
+
+\section{\label{sec:level4}Discussion}
+Overall our calculations were not off. According to NASA, our solar system is approximately 8 kpc, which is about 26,000 light years. There wasn't much error due to the fact that this was more of a computational approach rather than an experimental approach. If we had done this experimentally, we would have observed different stars and most likely did a parallax approach. This would have yield some significant error, due to the fact that this would have to be done experimentally if we did not have the data. The reasoning to the error if we had completed this experimentally is the fact we would have to rely on outdated techniques, such as the one Herschel used. Another reason on using older techniques is due to funding as well for viewing such objects and collecting data, because most of the data that I was using to calculate our location in the Milky Way was from NASA, which in fact has the necessary funds to send satellites to view these stars more accurately than the funds of two undergraduate college students that survive on ramen and partying. 
+
+\section{\label{sec:level5}Conclusion}
+In conclusion, we have gained an insightful wealth of knowledge by the use of computation and coding were able to quite accurately find how far we were from the center of the Milky Way. I believe if we had more time to refine the project to check other data and try other plotting methods we would have pinpointed what NASA and other space agencies that have calculated the 8 kpc. Overall we did get the range that these agencies calculated but we could have refined the computational part by considering more variables and had more time to research more about other methods. We would like to try to refine this project if given the chance to get a more accurate value in the future.
+
+\section{\label{sec:level6}Acknowledgements}
+Mr. Ali and Mr.Trent would like to acknowledge the following people/organizations.
+
+\paragraph{Dr. Blagoy Rangelov}
+Coolest Astrophysics Professor
+\paragraph{Texas State University, Physics Department}
+For offering Astrophysics as a class
+\paragraph{William Herschel}
+For pursuing this question and making future scientists
+\paragraph{Every Other Scientist}
+We stand on the shoulder's of giants, thank you for all your contributions to the science community
+\paragraph{Dank Boiiis}
+Always being there when the dank needed to be there
+
+\section{\label{sec:level7}Citations}
+
+\paragraph{Data}
+D. Froebrich, H. Meusinger and A. Scholz, 2007. SR 1735 - A new globular cluster candidate in the inner Galaxy. To appear in: Monthly Notices of the Royal Astronomical Society (2007). [Preprint: astro-ph/0703318] Discovery announce of FSR-1735.
+\paragraph{Data}
+W.E. Harris, 1996-1999. Catalog of Parameters for Milky Way Globular Clusters. Astronomical Journal, Vol. 112, p. 1487. Revision of June 22, 1999, February 2003. and December 2010. Available online, also see references and the potentially more current original site.
+\paragraph{Data}
+R.J. Hurt et.al., 2000. Serendipitous 2MASS Discoveries near the Galactic Plane: A Spiral Galaxy and Two Globular Clusters. The Astronomical Journal, Volume 120, Issue 4, pp. 1876-1883 (10/2000). [ADS: 2000AJ....120.1876H] - [Preprint] Discovery announce of two new globulars, 2MASS-GC01 and 2MASS-GC02.
+\paragraph{Data}
+Henry Kobulnicky, B.L. Babler, T.M. Bania, R.A. Benjamin, B.A. Buckalew, R. Canterna, E. Churchwell, D. Clemens, M. Cohen, J.M. Darnel, J.M. Dickey, R. Indebetouw, J.M. Jackson, A. Kutyrev, A.P. Marston, J.S. Mathis, M.R. Meade, E.P. Mercer, A.J. Monson, J.P. Norris, M.J. Pierce, R. Shah, J.R. Stauffer, S.R. Stolovy, B. Uzpen, C. Watson, B.A. Whitney, M.J. Wolff, and M.G. Wolfire, 2004. Newfound Star Cluster may be final Milky Way 'Fossil.' Spitzer Science Center News Release 2004-16. Discovery announce of the new globular GLIMPSE-C01.
+\paragraph{Data}
+S. Koposov, J.T.A. de Jong, H.-W. Rix, D.B. Zucker, N.W. Evans, G. Gilmore, M.J. Irwin, E.F. Bell, 2007. The discovery of two extremely low luminosity Milky Way globular clusters. Submitted to Astrophysical Journal. [Preprint: arXiv:0706.0019[astro-ph]] Discovery paper of Koposov 1 and Koposov 2.
+\paragraph{Data}
+R. Kurtev, V.D. Ivanov, J. Borissova, and S. Ortolani, 2008. Astronomy and Astrophysics, Vol 489, p 583. ADS 2008 A A 489 583K Discovery of GLIMPSE-C02.
+\paragraph{Data}
+S. Ortolani, E. Bica and B. Barbuy (2000). ESO 280-SC06: a new globular cluster in the Galaxy. Astronomy and Astrophysics, Vol. 361, pp. L57-L59 (September 2000). ADS: 2000A A...361L..57O] Discovery announce of the new globular, ESO 280-SC06.
+\paragraph{Data}
+S. Ortolani, E. Bica and B. Barbuy, 2006. AL 3 (BH 261): a new globular cluster in the Galaxy. Astrophysical Journal, Vol. 646, Issue 2, pp. L115-L118 (August 2006) [ADS: 2006ApJ...646L.115O] - [Preprint: astro-ph/0606718]. Discovery announce of the globular nature of AL-3.
+\paragraph{Internet}
+$https://www.scientificamerican.com/article/ \\ how-did-scientists-determ$
+\paragraph{Internet}
+$http://www.nbcnews.com/id/10385928/ns/ \\
+technology_and_science-space/t/scientists-\\
+figure-out-our-place-milky-way/.W5H3kC2ZN-U$
+\paragraph{Internet}
+$https://imagine.gsfc.nasa.gov/features/ \\cosmic/milkyway_info.html $
+\paragraph{Internet}
+$https://arxiv.org/pdf/1112.3635.pdf$ 
+\paragraph{Internet}
+$http://www.messier.seds.org/xtra/\\supp/mw_gc.html $
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******

@@ -1,0 +1,107 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 9}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.2.1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Suppose that $G$ is a set closed under an associative operation such that \\ 
+1. given $a,y \in G$, there is an $x \in G$ such that $ax = y$, and \\ 
+2. given $a,w \in G$, there is a $u \in G$ such that $ua = w$, \\
+Show that $G$ is a group
+\end{problem}
+ 
+\begin{proof}
+Let's choose $y=a$ and $w=a$. \\ \\
+\centerline{We get $ax=a$ and $ua=a$} \\ \\
+We must show that $x=u$ \\ \\
+Now let's choose $a=u$ and $a=x$. \\ \\
+\centerline{We get $ux=u$ and $ux=x$} \\ \\
+This shows $u=x$. Let's look at the element $i$, the identity element \\ \\
+Choose $y=i$ and $w=i$, we get $ax=i$ and $ua=i$ We must show $x=u$ \\ \\
+\centerline{$u(ax)=ui=u$} \\ \\
+\centerline{$u(ax) = (ua)x = ix = x$} \\ \\
+\centerline{\fbox{This shows the existence of an inverse, hence $G$ is a group by definition. Hence result}} \\ \\
+\end{proof}
+
+\begin{problem}{2.2.2}
+If $G$ is a finite set closed under an associative operation such that $ax=ay$ forces $x=y$ and $ua = wa$ forces $u=w$, for every $a,x,y,u,w \in G$, prove that $G$ is a group.
+\end{problem}
+
+\begin{proof}
+Let $ax = y$ fo some $a,x,y \in G$. let $w \in G$ be another element such that $aw = y$. Then $w=x$ form the given conditions \\ \\
+The cancellation laws gives the uniqueness of $x \in G$ for $a,y \in G$ such that $ax = y$ and $u \in G$ for $a,w \in G$ such that $ua = w$. \\ \\
+\centerline{\fbox{Without loss of generality, from problem 1, $G$ is a group}} \\ \\
+\end{proof}
+
+\begin{lemma}{2.2.1}
+If $G$ is a group, then: \\ \\
+a) Its identity element is unique \\ \\
+b) Every $a \in G$ has a unique inverse $a^{-1} \in G$ \\ \\
+c) If $a \in G, (a^{-1})^{-1} = a$ \\ \\
+d) For $a,b \in G, (ab)^{-1} = b^{-1}a^{-1}$
+\end{lemma}
+
+\begin{proof}
+We start with part (a). We must show that if $i,f \in G$ and $af = fa = a$ $\forall$ $a \ in G$ and $ai = ia = a$ $\forall$ $a \in G$, then $i =f$. Then $i=if$ and $f=if$; hence $i=if=f$ Hence result \\ \\
+We claim that in a group $G$ if $ab = ac$, then $b=c$; that is, we can cancel a given element from the same side of an equation. To see this, we have , for $a \in G$, an element $u \in G$ such that $ua = i$. Thus from $ab = ac$ we get $u(ab) = u(ac)$, so by the associative law, $(ua)b = (ua)c$, that is, $ib = ic$. Hence $b=ib=ic=c$, and our result is established. A similar argument shows that if  $ba = ca$, then $b=c$. However, we cannot conclude from $ab = ca$ that $b=c$; in any abelian group, yes, but in general no. \\ \\
+Now for part b, an implication of the cancellation result. Suppose that $b,c \in G$ act as inverses for $a$; then $ab = i =ac$, so by cancellation $b=c$ and we see that the inverse of $a$ is unique. We shall always write it as $a^{-1}$ Hence result. \\ \\
+To see part c note that by definition $a^{-1}(a^{-1})^{-1} = i$; but $a^{-1}a=i$, so by cancellation in $a^{-1}(a^{-1})^{-1} = i = a^{-1}a$ we get that $(a^{-1})^{-1} =a$. \\ \\
+Now for part d \\ \\
+\centerline{$(ab)(b^{-1}a^{-1}) = ((ab)b^{-1})a^{-1}$} \\ \\
+\centerline{$ \rightarrow (a(bb^{-1})a^{-1})$} \\ \\
+\centerline{$ \rightarrow (ae)a^{-1} = aa^{-1} = i$} \\ \\
+Similarly, $(b^{-1}a^{-1})(ab) = i$. Hence by definition, $(ab)^{-1}=b^{-1}a^{-1}$. \\ \\
+\centerline{\fbox{Hence we have prove all parts above}}
+\end{proof}
+ 
+ \begin{lemma}{2.2.2}
+In any group $G$ and $a,b,c \in G$ we have: \\ \\
+(a) If $ab = ac$, then $b=c$ \\ \\
+(b) If $ba = ca$, then $b=c$
+\end{lemma}
+
+\begin{proof}
+Note that if $G$ is the group of real numbers under $+$, then part c of Lemma 2.2.1 translate into the familiar $-(-a) = a$ \\ \\
+\centerline{\fbox{Hence from above we can use Lemma 2.2.1 part c to prove this. Hence result.}}
+\end{proof}
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

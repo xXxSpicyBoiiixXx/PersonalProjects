@@ -1,0 +1,131 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 13}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.4.9} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+In $\mathbb{Z}_{16}$, write down all the cosets of the subgroup $H = \{ [0], [4], [8],[12] \}$. (Since the operation in $\mathbb{Z}_n$ is $+$, write your coset as $[a]+H$ . We don''t need to distinguish between right cosets and left cosets, since $\mathbb{Z}_n$ is abelian under $+$.)
+\end{problem}
+ 
+\begin{proof}
+We are given $\mathbb{Z}_{16} = \{[0],[1],[2],...,[14],[15]\}$ and $H = \{ [0], [4], [8],[12] \}$. The list of all left cosets of $H$ in $\mathbb{Z}_{16}$ are \\ \\
+\centerline{$[0]+H=H$}
+\centerline{$[1]+H=\{[1],[5],[9],[13]\}$}
+\centerline{$[2]+H=\{[2],[6],[10],[14]\}$}
+\centerline{$[3]+H=\{[3],[7],[11],[15]\}$} \\ \\
+\centerline{\fbox{From above we can see all the let cosets of $H$ in $\mathbb{Z}_{16}$}}  \\ \\
+\end{proof}
+
+\begin{problem}{2.4.10}
+In problem 9, what is the index of $H$ in $\mathbb{Z}_{16}$
+\end{problem}
+
+\begin{proof}
+Looking at problem 9, we know the number of left cosets equal the amount of right cosets. \\ \\
+\centerline{\fbox{Hence the number of index of $H$ in $\mathbb{Z}_{16}$ is 4}} \\ \\
+\end{proof}
+
+\begin{problem}{2.4.12}
+if $aH$ and $bH$ are distinct left cosets of $H$ in $G$, are $Ha$ and $Hb$ distinct right cosets of $H$ in $G$? Prove that this is true or give a counterexample.
+\end{problem}
+
+\begin{proof}
+The short answer is no. So we will prove by counterexample. got instance if $G = S_3$ and $H$ is the subgroup in problem 6, then $Hg = \{g,fg\}$ and $Hfg =\{fg,f^2g=g\}=Hg$, while $gH = \{g,gf\}$ and $fgH = \{fg,ffg,g\}$ Because $fg=gf$ we see that $fgH =gH$ yet $Hfg = Hg$. \\ \\
+\centerline{\fbox{Hence from we can see that this isn't the case}}
+\end{proof}
+ 
+ \begin{problem}{2.4.13}
+Find the orders of all the elements of $\mathbb{U}_{18}$. Is $\mathbb{U}_{18}$ cyclic?
+\end{problem}
+
+\begin{proof}
+The elements of $\mathbb{U}_{18}$ are $\{[1],[5],[7],[11],[13],[17]\}$ the orders of these are \\ \\
+\centerline{$o([1])=1$}
+\centerline{$o([5])=6$}
+\centerline{$o([7])=3$}
+\centerline{$o([11])=6$}
+\centerline{$o([13])=3$}
+\centerline{$o([17])=2$} \\ \\
+Hence $o(x)=1$ or $2$ or $3$ \\ \\
+\centerline{\fbox{The group is cyclic since $o([5])=6$, so the powers of $[5]$ sweep out all of  $\mathbb{U}_{18}$}} \\ \\
+
+\end{proof}
+
+\begin{problem}{2.4.14}
+Find the orders of all the elements of $\mathbb{U}_{20}$. Is $\mathbb{U}_{20}$ cyclic
+\end{problem}
+
+\begin{proof}
+The elements of $\mathbb{U}_{20}$ are $\{[1],[3],[7],[9],[11],[13],[17],[19]\}$ the orders of these are \\ \\
+\centerline{$o([1])=1$}
+\centerline{$o([3])=8$}
+\centerline{$o([7])=8$}
+\end{proof}
+
+\begin{problem}{2.4.16}
+If $G$ is a finite abelian group and $a_1,...,a_n$ are all its elements, show that $x =a_1a_2...a_n$ must satisfy $x^2 = e$
+\end{problem}
+
+\begin{proof}
+Since $G$ is a finite group with all its elements are preciselty $a_1,a_2,a_3,...,a_n$, then the inverses of these elements are in the set $\{a_1,a_2,a_3,...,a_n\}$. Since $G$ is abelian \\ \\ 
+\centerline{$a_k \cdot a_m = a_m \cdot a_k$, for $1 \leq m$, $k \leq n$} \\ \\
+Now $x = a_1a_2a_3....a_n$ \\ \\
+\centerline{$x^2 = (a_1a_2a_3....a_n)^2 = (a_1a_2a_3....a_n)(a_1a_2a_3....a_n)$} \\ \\
+Since $G$ is abelian, the product $(a_1a_2a_3....a_n)(a_1a_2a_3....a_n)$ can arrange them according as $(a_i,a_j)$ where $a_i$ is the inverse of $a_j$ in $G$. Hence it follows that \\ \\
+\centerline{$x^2 = e \cdot e \cdot e ... e$, up to $n$ terms.} \\ \\ 
+Hence \\ \\
+\centerline{$x^2 = e$} \\ \\
+\centerline{\fbox{Hence, we have satisfy the condition set forth for a finite abelian group}} \\ \\
+\end{proof}
+
+\begin{problem}{2.4.17}
+If $G$ is of odd order, what can you say about the $x$ in Problem 16.
+\end{problem}
+
+\begin{proof}
+We are given that $G$ is a group of odd order such that there exists an element with $x^2 =e$ \\ \\
+We have that $x^2 = e$ \\ \\
+This follows that order of $x$ divides $2$. hence order of $x$ must be $1$ or $2$. If order of $x$ be $2$ in $G$, then $2$ must divide the order of $G$, which is impossible since $G$ is a group of an odd order. Hence, order of $x$ is 1 in $G$. Therefore $x=e$ \\ \\
+\centerline{\fbox{Hence $x$ must be the identity elements in $G$.}} \\ \\
+\end{proof}
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

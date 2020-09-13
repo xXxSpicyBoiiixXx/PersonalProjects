@@ -1,0 +1,100 @@
+%% ****** Start of file template.aps ****** %
+%%
+%%
+%%   This file is part of the APS files in the REVTeX 4 distribution.
+%%   Version 4.0 of REVTeX, August 2001
+%%
+%%
+%%   Copyright (c) 2001 The American Physical Society.
+%%
+%%   See the REVTeX 4 README file for restrictions and more information.
+%%
+%
+% This is a template for producing manuscripts for use with REVTEX 4.0
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+%
+% Group addresses by affiliation; use superscriptaddress for long
+% author lists, or if there are many overlapping affiliations.
+% For Phys. Rev. appearance, change preprint to twocolumn.
+% Choose pra, prb, prc, prd, pre, prl, prstab, or rmp for journal
+%  Add 'draft' option to mark overfull boxes with black boxes
+%  Add 'showpacs' option to make PACS codes appear
+\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for review and submission
+%\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
+\usepackage{graphicx}  % needed for figures
+\usepackage{dcolumn}   % needed for some tables
+\usepackage{bm}        % for math
+\usepackage{amssymb}   % for math
+
+% avoids incorrect hyphenation, added Nov/08 by SSR
+\hyphenation{ALPGEN}
+\hyphenation{EVTGEN}
+\hyphenation{PYTHIA}
+
+
+\begin{document}
+
+% The following information is for internal review, please remove them for submission
+\widetext
+\leftline{Version 01 as of \today}
+\leftline{Primary Authors: Md H. I. Ali}
+\leftline{Additional Investigators: Alison Nichols, Jacob Kerl, John Gomez-Simmons}
+\leftline{To be submitted to Department of Physics, Texas State University}
+\bigskip
+\centerline{\em INTERNAL DOCUMENT -- NOT FOR PUBLIC DISTRIBUTION}
+
+% the following line is for submission, including submission to the arXiv!!
+%\hspace{5.2in} \mbox{Fermilab-Pub-04/xxx-E}
+
+\title{One Succy Boiii (Vacuum Chamber)}     % D0 authors (remove the first 3 lines
+                             % of this file prior to submission, they
+                             % contain a time stamp for the authorlist)
+                             % (includes institutions and visitors)
+\date{\today}
+
+
+\begin{abstract}
+Vacuum systems are essential in conducting important physics research. These systems operate to reduce and measure the pressure inside of a certain chamber. We have investigated how we can automate a vacuum system with the usage of an Arduino Uno. The overall goal was to get a chamber to a pressure of $5 \cdot 10^{-5}$ Torr using any required parts as needed. The effectivity of the system was measured based on if the system was able to pump down to the required pressure in a reasonable amount of time. The system was able to achieve the vacuum pressure of  $5 \cdot 10^{-5}$ Torr in approximately $7$ minutes, once the chamber achieved this pressure it begin the venting process which was set to $10$ minutes to bring the system back to atmosphere. 
+\end{abstract}
+
+\pacs{N/A}
+\maketitle
+
+%\section{\label{sec:level1}First-level heading}
+% sections are not used for PRL papers
+\section{\label{sec: level1}I. Introduction}
+Creating a vacuum system has many possibilities, for instance one can accelerate a particle without any stress of having any molecules disrupting the movement and other precise experiments needed for a vacuum. With these highly precise experiments in mind, there is error that will occur with human interaction which will result in inaccuracy of the chamber or the need to constantly pump the system to achieve the desired pressure. Hence, having some controller (Arduino Uno) to automate the whole system will minimize these inaccuracy within the system due to the fact that there would be less human interactions to put random molecules within the system while the it's trying to achieve and maintain the required pressure. 
+%\subsection{\label{sec:level2}Second-level heading: Formatting}
+% subsections are not used for PRL papers
+\section{\label{sec: level2}II. Theory}
+To begin the process of building an automated vacuum, one must have complete understanding of how a vacuum system works. Vacuum chambers first have their pressured lowered by utilizing a rough pump of some sort which have an effective pressure range of $760 - 1 \cdot 10^{-3}$ Torr. To lower the pressure to our required pressure we must use a turbo pump. The turbo pump's operational pressure is $1 \cdot 10^{-3}$ Torr. The main issue here is that you must be at $1 \cdot 10^{-3}$ Torr before you can operate a turbo pump. If we do not take this precaution we can damage the turbo pump and the chamber's contents. The system must be able to prevent this from in a venting process or incase of an extreme emergency. Now, once you obtain the desired pressure, the pumps should stop running and all valves must be closed once reaching a desired pressure so you can maintain your desired pressure within the chamber. In this particular case, our goal is to achieve a pressure of $5 \cdot 10^{-5}$. Much of this process must be monitored by some sort of device that will read the atmosphere's from the chamber, for this we used a worker bee and hot cathode hornet and had to convert the voltage readings to pressures. There are many other devices we could have used or we could have just read the atmosphere directly off the hornet, but in the case of having an automated machine we must have all our data in one screen. In our case this was achieved with Arduino and Excel. 
+
+\section{\label{sec: level3}III. Method}
+We utilized an Arduino Uno, convection worker bee (CVG101), hot cathode hornet (IGM402), TriScroll 300, Varain Turbo V-70, pneumatic valves, relays, steel connectors, and a vacuum chamber. We must wipe down all steel connectors with isopropyl to remove any unwanted particles and condensation of the system. The assembly of the system itself will have to follow sequentially of a basic vacuum system. For this, we must have valves to close off the turbo pump, the chamber, and to vent the system after the desired pressure is achieved. The hot cathode hornet already reports our pressure but to have this hypothetically work from an environment with no human interactions, we must have zero human interactions. Hence our goal of a fully automated vacuum system. Now, from the hot cathode we can achieve a voltage which we must convert to Torr utilizing from the manual that $P = 10^{V-5.5/.5}$, where $P$ is pressure and $V$ is voltage. Once putting this equation in we had to modify this with a voltage divider due to the fact that the voltage from the start is too high for the Arduino to read from, thus the pressure equation will double the voltage due to the fact that the voltage divider equation will equal $V_{out}=V_{in}/2$. A general system set up can be shown in figure 1.
+
+ \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2.5in]{20190326_114622.jpg} 
+   \caption{Vacuum System Schematic}
+   \label{fig:example}
+\end{figure}
+Since we know the Arduino is not capable of reading anything above 5V we can conclude that it cannot supple over 5V. So in fact the Arduino cannot power the valves nor the pumps themselves. So we utilized a separate 24V power supple to power the valves. The rough and turbo were also powered by outside power supplies. All these power supplies were wired into relays to control them essentially as a switch once hitting a certain pressure. The Arduino then powers the relays, and it becomes a whole chain event starting from the code from the Arduino. The Arduino also grounds wire from everything in the system. The worker bee and the hot cathode hornet will not be automated with the hornet due to the fact that the system will start it up as soon as the readings are being received from the hot cathode hornet. 
+From this we were able to achieve data from the Arduino and have it within an excel graph shown in figure 2.
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2.5in]{pastedimage.png} 
+   \caption{Pressure Versus Time}
+   \label{fig:example}
+\end{figure}
+
+We can see from the graph that the x-axis is in minutes and the y-axis is the pressure in Torrs. Now at atmosphere the pressure is around 760 Torr and it quickly went down to the $1\cdot 10^{-1}$ in less than $4$ minutes. Overall this was achieved in a reasonable amount of time and we achieved an exponential decay with our system. The total approximate time that it took for the system to reach our goal pressure was approximately 7 minutes. 
+
+\section{\label{sec: level4}IV. Discussion}
+In our design, we had achieved the desire pressure as well as completed the task at hand for automation. I do believe we could have made a more effective system if given the right materials and time. There was only rough pump and one turbo working. In addition, many Arduino's were burned out and on the day of presenting our project some of our pins on our Arduino board were not working so we had to switch the boards the last minute. This project could have been better and improved if given a time frame of 4 weeks instead of 3 weeks in addition to having more working equipment. Overall, we achieved our goal and it works.
+
+\section{\label{sec: level5}V. Conclusion}
+We have learned a great bit about vacuum systems, especially on the day of. Overall this was a great introduction to many physics experiments being conducted at Texas State University as well as cutting edge research being done in other places. Without vacuum systems we cannot conduct such highly precise experiments and get required results without error. 
+\end{document}
+%
+% ****** End of file template.aps ******

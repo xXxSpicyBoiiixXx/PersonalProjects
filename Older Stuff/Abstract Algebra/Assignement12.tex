@@ -1,0 +1,131 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 12}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.4.2} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+The relation $\sim$ on the real numbers $\mathbb{R}$ defined by $a\sim b$ if both $a>b$ and $b>a$ is not an equivalence relation. Why not? What properties of an equivalence relation does it satisfy.
+\end{problem}
+ 
+\begin{proof}
+Let us examine the reflexiveness of the relation. \\ \\
+If $a$ is an element in $\mathbb{R}$, then $a$ does not satisfy any of the above given condition as, $a \not> a$ and $a \not< a$. This implies $\sim$ is not reflexive, which implies not an equivalence relation. \\ \\
+\centerline{\fbox{Hence, we can not satisfy the reflexive property, so its not an equivalence relations.}}
+\end{proof}
+
+\begin{problem}{2.4.3}
+Let $\sim$ be a relation on a set $S$ that satisfies (1)$a\sim b$ implies that $b\sim a$ and (2)$a\sim b$ and $b\sim c$ implies that $a\sim c$. These seem to imply that $a\sim a$ . For if $a\sim b$, then by (1), $b\sim a$, so $a\sim b$, $b\sim a$, so by (2), $a\sim a$. If this argument is correct, then the relation $\sim$ must be an equivalence relation. Problem 2 shows that this not so. What is wrong with the argument we have given?
+\end{problem}
+
+\begin{proof}
+Our argument provides that if $a\sim b$, then $a\sim a$. This assumes that for every $a$, we can find $b$ such that $a\sim b$. But this not the case, as seen in problem 2.  \\ \\
+\centerline{\fbox{Hence our argument fails to prove that $a\sim a$}}
+\end{proof}
+
+\begin{problem}{2.4.5}
+Let $G$ be a group and $H$ a subgroup of $G$. Define, for $a,b \in G$, $a\sim b$ if $a^{-1}b \in H$. Prove that this defines an equivalence relation on $G$, and show that $[a] = aH ] \{ah | h\in H\}$. The set $aH$ are called left cosets of $H$ in $G$.
+\end{problem}
+
+\begin{proof}
+Let us consider three elements $a,b,c \in G$. We will now check the equivalence relations of $\sim$ on $G$. \\ \\
+(i) Reflexivity \\ \\
+$a \in G$ then $a^{-1}a=e \in G$, $e$ being the identity element in $G$. So $a \sim a$. \\ \\
+(ii) Symmetry \\ \\
+$a,b \in G$ such that $a^{-1}b \in H$. \\
+Since $H$ is a subgroup. \\ \\
+\centerline{$(a^{-1}b)^{-1} \in H \rightarrow b^{-1}a \in H$} \\ \\
+This follows that $b \sim a$. \\ \\
+(iii) Transitivity \\ \\
+$a,b,c \in G$ such that $a \sim b$ and $b \sim c$ \\ \\
+\centerline{$a^{-1}b \in H$ and $b^{-1}c \in H$} \\ \\ 
+Since $H$ is a subgroup \\ 
+\centerline{$a^{-1}b \in H$ and $b^{-1}c \in H \rightarrow (a^{-1}b)(b^{-1}c) \in H$} \\ \\
+This follows that $a \sim c$ \\ \\
+Hence $\sim$ defines an equivalence relation on $G$. \\ \\
+Since $\sim$ is an equivalence relation we have \\ \\
+\centerline{$[a] = \{b \in G | a^{-1}b \in H \}$}
+\centerline{$= \{b \in G | aH = bH \}$}
+\centerline{$=aH$} \\ \\
+\centerline{\fbox{Hence, $\sim$ defines an equivalence relation on $G$ and $[a] = aH ] \{ah | h\in H\}$}}
+\end{proof}
+ 
+ \begin{problem}{2.4.6}
+If $G$ is $S_3$ and $H = \{i,f \}$, where $f: S \rightarrow S$ is defined by $f(x_1) = x_2$, $f(x_2)=x_1$, $f(x_3)=x_3$, list all the right cosets of $H$ in $G$ and list all the left cosets of $H$ in $G$.
+\end{problem}
+
+\begin{proof}
+We are given that $G=S_3$, where $S_3$ is the set of all permutations on the set of $\{ x_1, x_2, x_3\}$. We can see what $f$ of each makes from the problem. \\ \\ 
+Let's write $f$ as $f = (x_1,x_2)$. \\ 
+Let us introduce out set $S_3$ as \\ \\
+\centerline{$S_3 = \{i,f_1,f_2,f_3,f_4,f\}$,}
+\centerline{where $f_1 = (x_1,x_2,x_3),f_2=(x_1,x_3,x_2),f_3=(x_2,x_3),f_4 = (x_1,x_3)$} \\ \\
+Now let's look at the left cosets of $H$ in $G$ \\ \\
+\centerline{$iH= \{i,f\} = H$} 
+\centerline{$f_1H=\{f_1,f_4\}$}
+\centerline{$f_2H=\{f_2,f_3\}$}
+\centerline{$f_3H=\{f_3,f_2\}$}
+\centerline{$f_4H=\{f_4,f_1\}$}
+\centerline{$fH=\{f,i\}$} \\ \\
+Hence there are three distinct left cosets of $H$ in $G$ which are \\ \\
+\centerline{$H, \{f_2, f_3 \}, \{f_1,f_4\}$} \\ \\
+Now let's look at the right cosets of $H$ in $G$ \\ \\
+\centerline{$Hi = \{i,f\} = H$}
+\centerline{$Hf_1 = \{f_1,f_3\}$}
+\centerline{$Hf_2 = \{f_2,f_4\}$}
+\centerline{$Hf_3=\{f_3,f_1\}$}
+\centerline{$Hf_4=\{f_4,f_2\}$}
+\centerline{$Hf=\{f,i\}$} \\ \\
+Hence there are three distinct right cosets of $H$ in $G$ which are \\ \\
+\centerline{$H,\{f_2,f_4\},\{f_1,f_3\}$} \\ \\
+\centerline{\fbox{Hence the left cosets are $H, \{f_2, f_3 \}, \{f_1,f_4\}$ and the right cosets are $H,\{f_2,f_4\},\{f_1,f_3\}$}} \\ \\
+\end{proof}
+
+\begin{problem}{2.4.7}
+In problem 6, is every right coset of $H$ in $G$ also a left coset of $H$ in $G$.
+\end{problem}
+
+\begin{proof}
+Considering problem 6, we can easily see that not every right coset of $H$ in $G$ is a left coset of $H$ in $G$. For example, consider the right coset $Hf_1 = \{f_1,f_3\}$, which is not a left coset of $H$ in $G$. \\ \\
+\centerline{\fbox{From the above example we can conclude that not every right coset of $H$ in $G$ is a left coset of $H$ in $G$.}} \\ \\
+\end{proof}
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

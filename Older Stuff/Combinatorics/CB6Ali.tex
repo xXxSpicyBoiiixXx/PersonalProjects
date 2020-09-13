@@ -1,0 +1,174 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 6}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Combinatorics MATH 4350} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+I really need help on this. 
+\end{problem}
+ 
+\begin{proof}
+N/A
+\end{proof}
+
+\begin{problem}{2}
+This problem consists of 4 different problems and we are asked to find the closed formula for the sums. 
+\end{problem}
+
+\begin{proof}
+This has four parts \\ \\
+We will utilize $c(n,k)=c(n-1,k-1)+(n-1)c(n-1,k)$ \\ \\
+(a) $\displaystyle{ \sum_{k=1, k = odd}^n c(n,k)}$ \\ \\
+After looking at the first elements I have achieved this closed formula \\ \\
+\centerline{$\displaystyle{ \sum_{k=1, k = odd}^n c(n,k)} = 1 + \displaystyle{\dfrac{(n-1)!}{a_{k-1}!(n-1)^{a_{k-1}}} + (n-1)\dfrac{(n-1)!}{a_k!(n-1)^{a_k}}}$} \\ \\
+(b) $\displaystyle{ \sum_{k=1, k = even}^n c(n,k)}$ \\ \\
+After looking at the first elements I have achieved this closed formula \\ \\
+\centerline{$\displaystyle{ \sum_{k=1, k = even}^n c(n,k)} = 1 + \displaystyle{\dfrac{(n-1)!}{a_{k-}!(n-1)^{a_{k-1}}} + (n-1)\dfrac{(n-1)!}{a_k!(n-1)^{a_k}}}$} \\ \\
+Now for the next parts we know that the sterling numbers are basically the same thing except this is what it would be with relations to the last 2 problems such as $s(n,k)=(-1)^{n-k}c(n,k)$. So to my understanding we will just put this in front of the previous problems. \\ \\
+(c) \centerline{$\displaystyle{ \sum_{k=1, k = odd}^n s(n,k)} = (-1)^{n-k}(1 + \displaystyle{\dfrac{(n-1)!}{a_{k-1}!(n-1)^{a_{k-1}}} + (n-1)\dfrac{(n-1)!}{a_k!(n-1)^{a_k}}})$} \\ \\
+(d) \centerline{$\displaystyle{ \sum_{k=1, k = even}^n s(n,k)} = (-1)^{n-k}(1 + \displaystyle{\dfrac{(n-1)!}{a_{k-1}!(n-1)^{a_{k-1}}} + (n-1)\dfrac{(n-1)!}{a_k!(n-1)^{a_k}}})$} \\ \\
+\end{proof}
+
+\begin{problem}{3}
+Determine the number of permutations $p$ in $S_{16}$ such that $p^4 = id$ but $p^2 \neq id$.
+\end{problem}
+
+\begin{proof}
+Looking at the general number of permutations for $S_{16}$ we know that in general \\ \\
+\centerline{$S_n = \{ \sigma : A \rightarrow A | \sigma = 1-1\}$, where $A = \{1,2,3,...n\}$} \\ \\
+We know that $n=16$, now we are asked where $p^4$ will be the identity cycle but where $p^2$ is not.
+Here we will follow the book's equation which is listed below \\ \\
+\centerline{$\displaystyle{\dfrac{n!}{a_1!a_2!...a_n!1^{a_1}2^{a_2}...n^{a_n}}}$} \\ \\
+Now we will have to use the general form for this particular problem as shown below \\ \\
+\centerline{$\displaystyle{\dfrac{16!}{4!\cdot 2!\cdot4^4 \cdot 4^2}} =  638512875 $}\\ \\
+\centerline{\fbox{From above I got 638512875 permutations, but I am not sure if that is right.}} \\ \\
+
+
+\end{proof}
+
+\begin{problem}{4}
+For an integer $n \geq 1000$, give an expression for the number of integers in the set $[n]$ that are relatively prime to 60.
+\end{problem}
+
+\begin{proof}
+Since $n \geq 1000$ we will have an infinite number of integers in the set $[n]$ that are relatively prime to 60. But we are asked to find an expression for each of these primes. Let's first view all the primes from $1-60$ \\ \\
+According to Euler's totient function shown below \\ \\
+\centerline{$\phi(n) = n \displaystyle\prod_{p|n}(1-\dfrac{1}{p}) \rightarrow \phi(60) = \phi(2^2)\phi(3)\phi(5) = 16$} \\ \\
+We achieve that there are 16 different primes between 1-60 which are listed below. \\ \\
+\centerline{1,7,11,13,17,19,23,29,31,37,41,43,47,49,53,59} \\ \\
+Since we have that $n \geq 1000$ we can form a cycle with the numbers above and any number afterwards that end with any number above will be relatively prime with respect to 60. So our cycle will be \\ \\
+\centerline{\fbox{$(1 \; 7 \; 11\; 13\; 17\; 19\; 23\; 29\; 31\; 37\; 41\; 43\; 47\; 49\; 53\; 59)$, Hence result.}} \\ \\
+\end{proof}
+
+\begin{problem}{5}
+A Discrete Math II class has 42 students among whom 18 are Applied Math majors, 8 are Math majors, 16 are Computer Science majors, and 14 are Electrical Engineering majors. No student has double major Applied Math and Math, but there are two students with triple major. Determine the number of students win the class having exactly two majors.
+\end{problem}
+
+\begin{proof}
+We will simply use logical analysis and a little bit of linear algebra for this problem. \\ \\
+Now we are given that there are 42 students in total as well as the number in each disciple for the class. Adding each disciple we achieve that there are 56 majors in total. In the problem, we are told that no double majors can have both Applied Math and Math, which is irrelevant to know in this problem. Now there are exactly two students who are triple majors. \\ \\
+From above description we can have that \\ \\
+\centerline{$n_1 = $ number of students with one major}
+\centerline{$n_2 = $ number of students with two majors}
+\centerline{$n_3 = 2$ which is the number of students with triple majors} \\ \\
+Knowing the information above we can then set up the matrix below. \\ \\ 
+\centerline{$\begin{bmatrix}
+1 & 1 & 1 \\ 
+1 & 2 & 3 
+\end{bmatrix}
+\begin{bmatrix}
+n_1 \\
+n_2 \\
+n_3
+\end{bmatrix} =
+\begin{bmatrix}
+42 \\
+56
+\end{bmatrix} $}\\ \\ 
+Now since we know that $n_3 = 2$ the matrix will reduce to \\ \\
+\centerline{$\begin{bmatrix}
+1 & 1 \\ 
+1 & 2 
+\end{bmatrix}
+\begin{bmatrix}
+n_1 \\
+n_2 
+\end{bmatrix} =
+\begin{bmatrix}
+40 \\
+50
+\end{bmatrix} $}\\ \\
+Solving in the following manner \\ \\
+\centerline{$
+\begin{bmatrix}
+n_1 \\
+n_2 
+\end{bmatrix} =
+\begin{bmatrix}
+1 & 1 \\ 
+1 & 2 
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+40 \\
+50
+\end{bmatrix}  =
+\begin{bmatrix}
+2 & -1 \\ 
+-1 & 1 
+\end{bmatrix}
+\begin{bmatrix}
+40 \\
+50
+\end{bmatrix}
+$} \\ \\ \\
+\centerline{$\begin{bmatrix}
+n_1\\
+n_2 
+\end{bmatrix} =
+\begin{bmatrix}
+30 \\
+10
+\end{bmatrix}$} \\ \\ \\
+\fbox{As we can see from above we have that there is exactly 10 students with two majors. Hence result} \\ \\
+
+\end{proof}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

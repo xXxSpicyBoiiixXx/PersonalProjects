@@ -1,0 +1,121 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 16}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.6.1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+If $G$ is the group of all nonzero real numbers under multiplication and $N$ is the subgroup of all positive real numbers, write out $G/N$ by exhibiting the cosets of $N$ in $G$, and construct the multiplication in $G/N$
+\end{problem}
+ 
+\begin{proof}
+We are given that $G$ is the group of all nonzero real numbers under multiplication and $N$ is the subgroup of all positive real numbers and there will be basically 2 cosets to $G/N$ and 2 cosets are made of positive real numbers and negative real numbers. \\ \\
+Let's make positive real number = $\mathbb{N}$ \\ 
+Negative real number = $-\mathbb{N}$ \\ \\
+Hence we get that $G/N = (\mathbb{N}, -\mathbb{N})$ \\ \\
+Now for the graph. \\
+
+\begin{center}
+\begin{tabular}{ c c c }
+& $\mathbb{N}$ & $-\mathbb{N}$ \\ \\
+$\mathbb{N}$ & $\mathbb{N}$ & $-\mathbb{N}$ \\ 
+$-\mathbb{N}$ &  $-\mathbb{N}$ & $\mathbb{N}$ \\
+\end{tabular}
+\end{center}
+\bigskip
+\centerline{\fbox{Hence from above we have wrote out all of $G/N$ and constructed the multiplication table}} 
+\bigskip
+
+\end{proof}
+
+\begin{problem}{2.6.2}
+If $G$ is the group of nonzero real numbers under multiplication and $N = \{1, -1\}$, show how you can identify $G/N$ as the group of all positive real numbers under multiplication. What are the cosets of $N$ in $G$.
+\end{problem}
+
+\begin{proof}
+Let $G = (\mathbb{R}^*,\cdot)$, where $\mathbb{R}^* = \mathbb{R}/ \{0\}$. We are also given that $\{ 1, -1 \}$ \\ \\
+\centerline{ $G/N = \{ rN | r >0 \}$ where, $r \in \mathbb{R}$} \\ \\ 
+Define $\phi : G \rightarrow (\mathbb{R}^+, \cdot)$ \\ \\
+\centerline{$\phi (r) = r$ if $r >0$ or $-r$ if $r<0$}
+\centerline{$Ker \phi = N = \{1,-1\}$} \\ \\
+By first isomorphism theorem $G/ Ker\phi = G/N = (\mathbb{R}, \cdot)$ \\ \\
+Cosets of $N$ are 2 in number, one is the set of the real numbers and second is the set of negative real numbers. \\ \\
+\end{proof}
+
+\begin{problem}{2.6.3}
+If $G$ is a group and $N \triangleleft G$, show that if $\bar{M}$ is a subgroup of $G/N$ and $M = \{ a \in G | Na \in \bar{M} \}$, then $M$ is a subgroup of $G$, and $M \supset N$.
+\end{problem}
+
+\begin{proof}
+We know that $M$ is nonempty since $\bar{M}$ is nonempty. \\ \\
+If $a,b \in M$, then $Na$ and $Nb$ are in $\bar{M}$ and since $\bar{M}$ is a subgroup of $G/N$, $(Na)(Nb) = N(ab)$ is in $\bar{M}$ \\ \\
+So $ab \in M$ \\ 
+If $a \in M$, then $(Na)^{-1}=Na^{-1}$ is in $\bar{M}$ since $\bar{M}$ is a subgroup of $G/N$. $(Na)^{-1}=Na^{-1} \in \bar{M}$ and so $a^{-1} \in M$ \\ \\
+From this we can see that $M$ is a group it is own right and hence a subgroup of $G$. In addition for each $n$ in $N$, clearly $Nn = N$ is in $\bar{M}$, hence $N \subset M$ \\ \\
+\end{proof}
+ 
+ \begin{problem}{2.6.4}
+If $\bar{M}$ in Problem 3 is normal in $G/N$, show that the $M$ defined is normal in $G$.
+\end{problem}
+
+\begin{proof}
+Let $a$ in $M$ and $g$ be in $G$. Since $\bar{M}$ is normal in $G$ then we achieve that:  \\ \\
+\centerline{$Ng^{-1}NaNg = N(g^{-1}ag) \in \bar{M}$ and so $g^{-1}ag \in M$} \\ \\
+\centerline\fbox{{Hence $M$ is normal in $G$}}
+\end{proof}
+
+\begin{problem}{2.6.8}
+If $G$ is an abelian group and $N$ is a subgroup of $G$, show that $G/N$ is an abelian group.
+\end{problem}
+
+\begin{proof}
+Consider an abelian group $G$ and let $N$ be a normal subgroup of $G$. To show that $G/N$ is abelian. Consider the group \\ \\
+\centerline{$G/N = \{ gN | g \in G\}$} \\
+Let $gN,g'N \in G/N$ \\ \\
+\centerline{$gN \cdot g'N = g'N \cdot gN$ $\forall$ $gN,g'N \in G/N$} \\ \\
+Now let's take $gN \cdot g'N = gg'N$, we know that $G$ is abelian, then we get that \\ \\
+\centerline{$gg'=g'g$} \\ \\
+\centerline{$gN \cdot g'N = gg'N = g'gN = g'NgN$} \\ \\
+\centerline{This show $gN \cdot g'N = g'NgN$ $\forall$ $gN,g'N \in G/N$}  \\ \\
+\centerline{\fbox{Hence $G/N$ is abelian}}
+\end{proof}
+
+
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

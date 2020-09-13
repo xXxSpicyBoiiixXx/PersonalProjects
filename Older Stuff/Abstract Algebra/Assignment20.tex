@@ -1,0 +1,106 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 20}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{3.3.1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Find the parity of each permutation.
+\end{problem}
+ 
+\begin{proof}
+This problem has 4 parts \\ \\
+(a) $\displaystyle{123456789 \choose 245137896}$ \\
+This equals (1 2 4)(3 5)(6 7 8 9) and we can write this into pairs such as \\ \\
+\centerline{(1 4)(1 2)(3 5)(6 9)(6 8)(6 7)} \\ \\
+\centerline{We can see that there are 6 pairs hence this is an even permutation} \\ \\ \\
+(b) (1 2 3 4 5 6)(7 8 9) \\
+We can write this as (1 6)(1 5)(1 4)(1 3)(1 2)(7 9)(7 8) \\ \\
+\centerline{We can see that there are 7 pairs hence this is an odd permutation} \\ \\ \\
+(c) (1 2 3 4 5 6)(1 2 3 4 5 7) \\ \\
+Multiplying this out we get that $\displaystyle{1234567 \choose 3456712}$ \\ \\
+Which comes to (1 3 5 7 2 4 6) and we can write this as \\ \\
+(1 6)(1 4)(1 2)(1 7)(1 5)(1 3) \\ \\
+\centerline{We can see that there are 6 pairs hence this is an even permutation} \\ \\ \\
+(d) (1 2)(1 2 3)(4 5)(5 6 8)(1 7 9) \\ \\
+Multiplying this out we get that $\displaystyle{123456789 \choose 732568941}$ \\ \\
+Which come to (1 7 9)(2 3)(4 5 6 8) and we can write this as \\ \\
+(1 9)(1 7)(2 3)(4 8)(4 6)(4 5) \\ \\ 
+\centerline{We can see that there are 6 pairs hence this is an even permutation} \\ \\ \\
+\end{proof}
+
+\begin{problem}{3.3.2}
+Let $\sigma$ is a k-cycle, show that $\sigma$ is an odd permutation if $k$ is even, and is an even permutation if $k$ is odd.
+\end{problem}
+
+\begin{proof}
+Let us consider $\sigma = (\alpha_1, \alpha_2,..., \alpha_k)$ This is when $\sigma$ is a $k$-cycle. We can achieve two cases from this. \\ \\ 
+Case 1: $k$ is even. \\
+In this case we can see that $k-1$ is odd. \\
+Then $\sigma$ being a $k$-cycle, it can be written as a product of odd number of transposition \\ \\
+\centerline{Hence $\sigma$ is an odd permutation} \\ \\ \\
+Case 2: $k$ is odd. \\ 
+In this case we can see that $k-1$ is even. \\
+Then $\sigma$ being a $k$-cycle, it can be written as a product of even number of transposition \\ \\
+\centerline{Hence $\sigma$ is an even permutation} \\ \\ \\
+\centerline{\fbox{From above we can see that $\sigma$ is an odd permutation if $k$ is even and vice versa}} \\ \\
+\end{proof}
+
+\begin{problem}{3.3.3}
+Prove that $\sigma$ and $\tau^{-1} \sigma \tau$, for any $\sigma$,$\tau \in S_n$, are on the same parity. 
+\end{problem}
+
+\begin{proof}
+We have a homomorphism $v: S_n \rightarrow \{1,-1\}$, where it is understood to be a group under ordinary integer multiplication, such that $v$ maps all even permutations to 1 and all odd permutations to -1. Then we get \\ \\
+\centerline{$v(\tau^{-1}\sigma \tau) = v(\tau^{-1})v(\sigma)v(\tau)=(v(\tau)^2v(\sigma)=v(\sigma)$} \\ \\
+Hence we can see that $\tau$ and $\tau^{-1}$ have the same parity and we know that $x^2 = 1$ $\forall$ $x \in \{1,-1\}$. \\ \\
+\centerline{\fbox{With the information above we can easily see that $\sigma$ and $\tau^{-1} \sigma \tau$ have the same parity.}} \\ \\
+\end{proof}
+ 
+\begin{problem}{3.3.5}
+Suppose you are told that the permutation \\ \\
+\centerline{$\displaystyle{1 \: 2 \: 3 \: 4\: 5\: 6\: 7\: 8 \: 9 \choose 3 \: 1 \: 2 \: \: \: \: \: \: 7 \: 8 \: 9 \: 6}$} \\ \\
+In $S_9$, where the images of 5 and 4 have been lost, is an even permutation. What must the images of 5 and 4 be? \\
+\end{problem}
+
+\begin{proof} 
+Taking this we can see that the pairs will become $(132)(6789$ now this leads to having an odd permutation of 5. We need one more pair to make the whole thing an even permutation so the only suitable images for 4 and 5 is as follows. \\ \\
+\centerline{\fbox{The image of 4 is 5 and the image of 5 is 4. Hence result}} 
+\end{proof}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

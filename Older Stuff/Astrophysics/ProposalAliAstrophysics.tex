@@ -1,0 +1,128 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Mapping Uranus' Magnetosphere}% Force line breaks with \\
+\thanks{A proposal}%
+
+\author{Md Ali}
+ \email{mha27@txstate.edu}
+\affiliation{%
+ Physics Department, Texas State University\\
+ PHYS 3313 Astrophysics
+}%
+
+\collaboration{Spicy Boiiis Inc.}%\noaffiliation
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
+                             % Classification Scheme.
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\tableofcontents
+
+\section{\label{sec:level1}Motivation and Background}
+
+Uranus is the 7th planet in our solar system from the Sun and is the 4th largest planet by mass. The planet is shown in fig 1. The most interesting fact about this planet is that it has an orbital tilt $97.77^\circ$ but it's magnetic dipole axis is tilted $58.6^\circ$ from the rotation axis and is very off centered. The orbital tilt and magnetic dipole axis is seen in fig 2. This atypical magnetic configuration introduces intriguing questions about the nature of the planet as a whole. We are particularly interested in the planet's magnetosphere and propose to simulate and map theoretically Uranus' magnetosphere. The study of Uranus' magnetosphere will benefit our understandings of the magnetospheres of our solar system and better understand the unknown nature of Uranus.
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2in]{Balls.jpg} 
+   \caption{Image of Uranus by Keck Telescope}
+   \label{fig:example}
+\end{figure}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=3in]{UranusMag.jpg} 
+   \caption{Uranus Orbital Tilt and Magnetic Dipole}
+   \label{fig:example}
+\end{figure}
+
+\section{\label{sec:level2}Method}
+
+We shall utilize data extracted from Voyager II's flyby of Uranus and related equation of planetary magnetospheres we can code the given values in Python and make a computer simulation using AMUSE for Uranus' complex magnetic structure to create a simulation of it's magnetosphere. Magnetospheres are dependent on several variable: the type of astronomical object, the nature of sources of plasma and momentum, the period of the object's spin, the nature of the axis about which the objects spins, the axis of the magnetic dipole, and the magnitude and direction of the flow of solar wind. Since we are using Uranus, the following equation will use Uranus' planetary characteristics. The dipole field strength as a function of radial distance (in the equatorial plane) is: \[ B(r)=B_0(R_U/r)^3 \] with $R_U$, being the radius of Uranus and $r$ the distance from Uranus. This is helpful in finding the magnetic field of Uranus for upcoming equations. This can make the planetary magnetic pressure vary as \[B^2/2\mu_0=(B^2_0/2\mu_0)(R_U/r)^6\] For the case that we need where we have a dipolar magnetic field \[ R_{CF}=R_U(B^2_0/\mu_0\rho_{sw}V^2_{sw})^{1/6}\] where $\rho_{sw}$ is the density of solar wind, $V_{sw}$ is the volume of the solar wind, and $R_{CF}$ is the Chapman-Ferraro distance. The Chapman-Ferraro distance is where the magnetosphere can withstand the solar wind pressure. From this we can map out and code simulation of the magnetosphere of Uranus.
+
+\section{\label{sec:level3}Potential Obstacles}
+
+The potential obstacles are that we only have the data for one flyby from Voyager II since the planet has not been visited by other satellites, possibly due to the fact of the irregular magnetic nature of Uranus and the distance from Earth. The last potential obstacle is that all of the magnetospheres explored up to now have magnetic dipole axes oriented almost perpendicularly to the ecliptic plane. Therefore, the nature of the interaction between the solar wind and a magnetic dipole oriented toward the sun is largely unknown, hence we are proposing to create a simulation to see the results of this phenomena and explain what would theoretically happen. 
+
+\section{\label{sec:level4}Summary}
+
+Overall, if we are to fully understand what it means to live with a star, we must gain full understanding of how every magnetosphere in the solar system interacts with our star. After the exploration of the inner rocky planets, which revealed very different interaction with the solar wind, depending on the presence or not of a strong planetary magnetic field, and after the exploration of the giant gaseous planets, with the huge magnetospheres whose dynamics is dominated by the internal plasma sources, the next step of the solar system exploration is the study of the magnetospheres of the ice giants, starting with Uranus using theoretical modeling and mapping techniques. This is the first step to many to understand this unknown planet of our solar system. 
+
+\section{\label{sec:level5}References}
+
+[1] Planetary Magnetospheres \textit{Astrophysical and Planetary Sciences, Dept. and Laboratory for Asmospheric and Space Physics, University of Colorado, Boulder, CO, USA}. Accessed in December 6th 2018 http://lasp.colorado.edu/home/mop/files/2015/Bagenal2013.pdf \\
+
+[2] NASA Science \textit{Solar System Exploration Uranus}. Accessed in December 6th 2018 https://solarsystem.nasa.gov/planets/uranus/overview/ \\
+
+[3] NASA Science \textit{NASA's Cosmos}. Accessed in December 6th 2018 https://ase.tufts.edu/cosmos/viewpicture.asp \\
+
+[4] NASA Science \textit{Scientific Visualization Studio}. Accessed in December 6th 2018 https://svs.gsfc.nasa.gov/4144
+
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******

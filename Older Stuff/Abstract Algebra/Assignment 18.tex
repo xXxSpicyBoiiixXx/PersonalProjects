@@ -1,0 +1,137 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 18}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{3.1.1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Find the products:
+\end{problem}
+ 
+\begin{proof}
+This problem has 3 parts \\ \\
+a) $\displaystyle{1 2 3 4 5 6 \choose 6 4 5 2 1 3}$ $\displaystyle{123456 \choose 234561}$ \\ \\
+Let suppose that the first element in the product is $\sigma$ and the second one $\tau$. Now we have that \\ \\
+$\tau : 1 \rightarrow 2$ and $\sigma : 2 \rightarrow 4$, then $\sigma \tau :1 \rightarrow 4$ \\
+$\tau : 2 \rightarrow 3$ and $\sigma : 3 \rightarrow 5$, then $\sigma \tau :2 \rightarrow 5$ \\
+$\tau : 3 \rightarrow 4$ and $\sigma : 4 \rightarrow 2$, then $\sigma \tau :3 \rightarrow 2$ \\
+$\tau : 4 \rightarrow 5$ and $\sigma : 5 \rightarrow 1$, then $\sigma \tau :4 \rightarrow 1$ \\
+$\tau : 5 \rightarrow 6$ and $\sigma : 6 \rightarrow 3$, then $\sigma \tau :5 \rightarrow 3$ \\
+$\tau : 6 \rightarrow 1$ and $\sigma : 1 \rightarrow 6$, then $\sigma \tau :6 \rightarrow 6$ \\ \\
+\centerline{\fbox{Hence, $\sigma \tau = \displaystyle{1 2 3 4 5 6 \choose 452136}$}} \\ \\
+\bigskip
+b) $\displaystyle{1 2 3 4 5  \choose 21345}$ $\displaystyle{12345 \choose 32145}$ \\ \\
+Now using the same variables we get \\ \\
+$\tau : 1 \rightarrow 3$ and $\sigma : 3 \rightarrow 3$, then $\sigma \tau :1 \rightarrow 3$ \\
+$\tau : 2 \rightarrow 2$ and $\sigma : 2 \rightarrow 1$, then $\sigma \tau :2 \rightarrow 1$ \\
+$\tau : 3 \rightarrow 1$ and $\sigma : 1 \rightarrow 2$, then $\sigma \tau :3 \rightarrow 2$ \\
+$\tau : 4 \rightarrow 4$ and $\sigma : 4 \rightarrow 4$, then $\sigma \tau :4 \rightarrow 4$ \\
+$\tau : 5 \rightarrow 5$ and $\sigma : 5 \rightarrow 5$, then $\sigma \tau :5 \rightarrow 5$ \\ \\
+\centerline{\fbox{Hence, $\sigma \tau = \displaystyle{1 2 3 4 5  \choose 31245}$}} \\ \\ \\
+\bigskip
+c) $\displaystyle{1 2 3 4 5  \choose 41325}^{-1}$ $\displaystyle{12345 \choose 21345}$ $\displaystyle{12345 \choose 41325}$ \\ \\
+Taking the inverse we can see that $\displaystyle{1 2 3 4 5  \choose 41325}^{-1} = \displaystyle{41325 \choose 12345} = \displaystyle{12345 \choose 24315}$ \\ \\
+Now it's pretty straight forwards from here because multiplication of permutations is associative. Doing two of these we get: \\ \\
+$\sigma \tau = \displaystyle{1 2 3 4 5  \choose 42315}$ and then the third one \\ \\
+$\sigma \tau \omega = \displaystyle{1 2 3 4 5  \choose 14325}$ \\ \\ 
+\centerline{\fbox{Hence, $\sigma \tau \omega = \displaystyle{1 2 3 4 5  \choose 14325}$}} \\ \\ \\
+\end{proof}
+
+\begin{problem}{3.1.2}
+Evaluate all the powers of each permutations $\sigma$
+\end{problem}
+
+\begin{proof}
+This problem has 3 parts \\ \\
+a) $\displaystyle{1 2 3 4 56   \choose 234561}$ \\ \\
+if $k=0$ we get the identity \\ 
+if $k = 1$, $\sigma$ \\
+if $k=2$, $\sigma^2 = \displaystyle{1 2 3 4 56   \choose 345612}$
+if $k=2$, $\sigma^3 = \displaystyle{1 2 3 4 56   \choose 456123}$
+if $k=2$, $\sigma^4 = \displaystyle{1 2 3 4 56   \choose 561234}$
+if $k=2$, $\sigma^5 = \displaystyle{1 2 3 4 56   \choose 612345}$ \\ \\
+and $k=6$ brings us the identity again. \\ \\ \\
+b) $\displaystyle{1 2 3 4 567   \choose 2134657}$ \\ \\ 
+We can see that $\sigma^2$ is indeed the identity permutation, hence $\sigma^k = \sigma$ if $k$ is odd and $\sigma^k = id$ if $k$ is even \\ \\ \\
+c) $\displaystyle{1 2 3 4 56   \choose 645213}$ \\ \\
+if $k=0$ we get the identity \\ 
+if $k = 1$, $\sigma$ \\
+if $k=2$, $\sigma^2 = \displaystyle{1 2 3 4 56   \choose 321465}$
+if $k=2$, $\sigma^3 = \displaystyle{1 2 3 4 56   \choose 546231}$
+and $k=4$ brings us the identity again. \\ \\ \\
+\end{proof}
+
+\begin{problem}{3.1.3}
+Prove that $\displaystyle{1 2 ...n \choose i_1 i_2....i_n}^{-1} = \displaystyle{i_1 i_2....i_n \choose 1 2 ...n}$
+\end{problem}
+
+\begin{proof}
+Due to the uniqueness of inverses in groups, we can show that multiplying these two together will lead to the identity permutation. This is immediate from the fact that we can see that $\sigma(m) = m$ no matter what hence the above equation holds true.
+\end{proof}
+ 
+\begin{problem}{3.1.4}
+Find the order of each element in Problem 2.
+\end{problem}
+
+\begin{proof} 
+\bigskip
+a) \\
+ order of $\sigma = 6$ \\ 
+order of $\sigma^2 =3$ \\
+order of $\sigma^3 = 2$ \\
+order of $\sigma^4 = 3$ \\
+order of $\sigma^5 = 6$ \\
+b) \\
+order of $\sigma = 2$ \\
+c) \\
+order of $\sigma = 4$ \\ 
+order of $\sigma^2 =2$ \\
+order of $\sigma^3 = 4$ \\ \\
+\end{proof}
+
+\begin{problem}{3.1.5}
+Find the order of the products you obtained in Problem 1.
+\end{problem}
+
+\begin{proof}
+\bigskip
+a) order of $\sigma = 6$ \\ 
+b) order of $\sigma = 2$ \\
+c) order of $\sigma = 2$ \\ \\ 
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

@@ -1,0 +1,122 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 5}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Combinatorics MATH 4350} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Determine the number of composition of 25 into 5 odd parts.
+\end{problem}
+ 
+\begin{proof}
+Let's suppose that $(a_1,...,a_5)$ be such a weak composition. \\ \\
+\centerline{We achieve that $a_1+...+a_5=25$, where $a_1,...,a_5$ are non-negative odd numbers} \\ \\
+We can express each $a_i$ as $a_i = 2x_i+1$ from some non-negative integer $x_i$. Now we get \\ \\
+\centerline{$25 = a_1+...+a_5 = (2x_1+1)+...+(2x_5+1) = 2(x_1 +...+ x_5)+5$} \\ \\
+From above we can see that $x_1+...+x_5 = 10$. Hence we can conclude that the number of compositions of 25 into 5 odd parts is the same number of compositions of 10 into 5 parts. Hence we get \\ \\
+\centerline{$\displaystyle{10+5 - 1 \choose 5-1} = {14 \choose 4} = 1001$} \\ \\ \\
+\centerline{\fbox{Hence the number of composition of 25 into 5 odd parts is 1001}} \\ \\
+\end{proof}
+
+\begin{problem}{2}
+Find a closed formula for $S(n,n-3)$ where $n$ is an integer $n \geq 3$.
+\end{problem}
+
+\begin{proof}
+We will see partitions of $[n]$ into $(n-3)$ blocks, comes to basically three ways: \\ \\
+a) One block of size $4$, $(n-4)$ block of size $1$. There are $\displaystyle{n \choose 4}$ of these \\ \\
+b) One block of size $3$, One block of size $2$, $(n-5)$ blocks of size $1$. There are $\dfrac{\displaystyle{n \choose 3}{n-3 \choose 2}}{2}$ of these \\ \\
+c) Three blocks of size $3$, One block of size $2$, $(n-5)$ blocks of size $1$. Let us consider the three bigger blocks different, there are $\displaystyle{n \choose 2}{n-2 \choose 2}{n-4 \choose 2}$ of these. However, there three are actually indistinguishable making that there are actually $\dfrac{\displaystyle{n \choose 2}{n-2 \choose 2}{n-4 \choose 2}}{3!}$ of these \\ \\
+We can put these together to form \\ \\
+\centerline{\fbox{$\displaystyle{n \choose 4}+\dfrac{\displaystyle{n \choose 3}{n-3 \choose 2}}{2} + \dfrac{\displaystyle{n \choose 2}{n-2 \choose 2}{n-4 \choose 2}}{3!}$}} \\ \\
+
+\end{proof}
+
+\begin{problem}{3}
+Let $F(n)$ be the number of all partitions of $[n]$ with no singleton blocks. Find a recursive formula for the numbers $F(n)$ in terms of the numbers $F(i)$, with $i < n-1$.
+\end{problem}
+
+\begin{proof}
+Now let's take from problem 4 that $B(n) = F(n) + F(n+1)$ \\ \\
+\centerline{$F(n+1) = B(n)F(n)$} \\
+\centerline{$=B(n)-B(n-1)+[B(n-2)-F(n-2)]$} \\
+\centerline{$=B(n)-B(n-1)+B(n-2)-F(n-2)...$}\\
+\centerline{$\displaystyle \sum_{i=0}^{k}(-1)^iB(n-i)+(-1)^{k+1}+(n-k)$} \\ \\
+\centerline{\fbox{$\displaystyle \sum_{i=0}^{n-1}(-1)B(n-i)$}} \\ \\
+
+\end{proof}
+
+\begin{problem}{4}
+Let $F(n)$ be the number of all partitions of $[n]$ with no singleton blocks. Prove that $B(n) = F(n) + F(n+1)$ for every positive integer $n$.
+\end{problem}
+
+\begin{proof}
+Let $F(n)$ be the number of set partitions of $[n]$ with no singleton block. Let us say a partition $[n]$ is good, if it has no singleton block bad otherwise. \\ \\
+$B_n$, the $n^{th}$ Bell number, is the total number of partitions of $[n]$, if $b(n)$ is the number of partitions of $[n]$, \\
+\centerline{$F(n) = B_n - b(n)$} \\ \\ 
+By direct enumeration of $F(n)$ and $b(n)$ and a table of Bell numbers we achieve \\ \\
+\begin{center}
+\begin{tabular}{ c c c c}
+ $n$ & $F(n)$ & $b(n)$ & $B_n$ \\ \\
+ 0 & 0 & 1 & 1\\  
+ 1 & 0 & 1 & 1 \\
+ 2 & 1 & 1 & 2 \\
+ 3 & 1 & 4 & 5 \\
+ 4 & 4 & 11 & 15 \\ 
+ 5 & 11 & 41 & 52 \\
+ 6 & 41 & 102 & 203 \\
+\end{tabular}
+\end{center}
+
+Suppose first that $\pi$ is a bad partition of $[n]$, then we can form a good partition of $[n+1]$ by gathering all of the singletons of $\pi$ into a single block and putting $n+1$ into that block. Conversely, if $\pi$ is a good partition of $[n+1]$, we can make a bad partition of $[n]$ by taking the block of $\pi$ containing $n+1$, throwing away $n+1$ and making the rest of the block to singletons. These operations are clearly inverses of each other and thus we have a bijection between bad $[n]$ partitions and good $[n+1]$ partitions. This gives us that the recurrence $F(n+1) = B(n) - F(n)$ \\ \\
+\centerline{\fbox{Rearranging we get $B(n) = F(n) + F(n+1)$}} \\ \\
+\end{proof}
+
+\begin{problem}{5}
+Let $p_n$ be the number of compositions of $n$ into parts that are larger than 1. Determine $p_1$ and $p_2$. Then express $p_n$ in terms of $p_{n-1}$ and $p_{n-2}$ for every integer $n \geq 3$.
+\end{problem}
+
+\begin{proof}
+Since $p_n$ is the number of compositions of $n$ we obtain that $p_1+...+p_n=n$ and $p_i \geq 2$ $\forall i$. If $p_n = 2$, then $(p_1,...,p_{n-1})$ is a compositions of $n-2$ into parts larger than 1, and otherwise we achieve that $(p_1,...,p_n - 1)$ is a composition of $n-1$ into parts larger than 1, from this we obtain the recurrence relationship of \\ \\
+\centerline{\fbox{$p_n = p_{n-1} + p_{n-2}$ for $n \geq 3$ with $a_1 = 0$, $a_2 = 1$}} \\ \\
+
+\end{proof}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

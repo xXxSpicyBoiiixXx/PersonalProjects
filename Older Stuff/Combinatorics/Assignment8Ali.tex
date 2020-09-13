@@ -1,0 +1,109 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 7}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Combinatorics 4350} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Let $\{ a_n \}_{n \geq 0}$ be a real sequence with generating function $F(x)$. $(i.e. F(x) \sum_{n=0}^{\infty} a_n)$. Find an expression for $a_n$ for every non-negative integer $n$, if \\ \\ 
+\centerline{$F(x) = \dfrac{18+2x^3}{(1-x)^3}$} \\ \\
+
+\end{problem}
+
+\begin{proof}
+Switching up our generating function we get \\ \\
+\centerline{ $\dfrac{18+2x^3}{(1-x)^3} =  2\dfrac{9+x^3}{(1-x)^3} =  2\dfrac{9+x^3}{(1-x)^2(1-x^2)}$} \\ \\
+\centerline{ $2\dfrac{9+x^3}{(1-x)^2(1-x^2)} = 2(9+x^3)(1-x^2)^{-1}(1-x)^{-2}$} \\ \\
+Using the table for generating function \\ \\
+\centerline{$F(x) = 2(9+x^3)(1+x^2+x^4+...)(1+2x+3x^2+...)$} \\ \\
+\centerline{$F(x) = 2(9+x^3)(1+2x+3x^2+4x^3...+x^2+2x^3+3x^4+4x^5+...)$} \\ \\
+\centerline{$F(x) = 2[9+18x+36x^2 +54x^3+...]$} \\ \\
+\centerline{$F(x) = 18+36x+72x^2+108x^3+...$} \\ \\
+So we get that \\ \\
+\centerline{$a_n = a_{n-1}+a_{n-2}$ with $a_0=18,a_1 = 36, a_2 = 72$} \\ \\
+
+\end{proof}
+
+\begin{problem}{2}
+Determine the coefficients of $x^{30}$ and of $x^{37}$ in the formal power series for the ordinary generating function
+$$F(x)={{3x^2}\over {1-2x^7}}+{2\over {(1-x)^5}}+{{20+5x}\over {1-x^2}}.$$
+\end{problem}
+
+\begin{proof}
+We want to find $x^{30}$ and of $x^{37}$ \\ \\
+\centerline{$F(x) = 3(x^2)(1-2x^7)^{-1}+2(1-x)^{-5}+(20+5x)(1-x^2)^{-1}$} \\ \\
+Used Mathematica to find each coefficient \\ \\
+\centerline{$x^{30} = 2357065$, $x^{37}=58331641$} \\ \\
+\end{proof}
+
+\begin{problem}{3}
+Let $\{a_n\}_{n\geq 0}$ be a real sequence with ordinary generating function $F(x)$, i.e. $F(x)=\sum_{n=0}^{\infty}a_nx^n$. Let $k$ be an arbitrary positive integer.
+Let $\{b_n\}_{n\geq 0}$ be the sequence defined by $b_n={{n+k}\choose n}k!a_{n+k}$, for any non-negative integer $n$, and let $G(x)$ be the ordinary generating function for the sequence $\{b_n\}_{n\geq 0}$. Express $G(x)$ in terms of $F(x)$, $\{a_n\}_{n\geq 0}$ and the integer $k$.\\
+\end{problem}
+
+\begin{proof}
+Let's look at first \\ \\
+\centerline{${n+k \choose n} = \dfrac{(n+k)!}{n!(n+k-n)!} \rightarrow  \dfrac{(n+k)!}{n!(n+k-n)!}  \cdot k! \cdot a_{n+k} = \dfrac{(n+k)!}{n!}\cdot a_{n+k}$} \\ \\
+\centerline{ $\sum_{n=0}^{\infty} \dfrac{(n+k)!}{n!}\cdot a_{n+k}x^{n+k}$} \\ \\
+\centerline{$\dfrac{(n+k)!}{n!} = k! - n!$} \\ \\
+\centerline{$\sum_{n=0}^{\infty} (k! - n!)\cdot a_{n+k}x^{n+k}$} \\ \\
+\centerline{$\sum_{n=0}^{\infty} k!\cdot a_{n+k}x^{n+k} - n! \cdot a_{n+k}x^{n+k}$} \\ \\
+\centerline{$k!\sum_{n=0}^{\infty} a_{n+k}x^{n+k} - n! \cdot a_{n+k}x^{n+k}$} \\ \\
+Not sure what to do from here.
+
+
+\end{proof}
+ 
+\begin{problem}{4}
+Let $\{a_n\}_{n\geq 0}$ be a real sequence with ordinary generating function $F(x)$, i.e. $F(x)=\sum_{n=0}^{\infty}a_nx^n$. Let $s$ and $t$ be two positive integers. Let $\{b_n\}_{n\geq 0}$ be the sequence defined by 
+$$b(n)=\left\{
+	\begin{array}{ll}
+	0, & \mbox {if } 0\leq n\leq 3 \\
+	ta_{n}-1,  & \mbox {if } n\geq 4 \mbox{ and } n \mbox{ is even} \\
+	sa_{n}+1, & \mbox {if } n\geq 5 \mbox{ and } n \mbox{ is odd}
+	\end{array}
+	\right.$$
+and let $G(x)$ be the ordinary generating function for the sequence $\{b_n\}_{n\geq 0}$. Express $G(x)$ in terms of $F(x)$, $\{a_n\}_{n\geq 0}$ and the integers $s$ and $t$.\\
+\end{problem}
+
+\begin{proof} 
+I had no idea where to start. At least I'm trying I suppose.
+\end{proof}
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

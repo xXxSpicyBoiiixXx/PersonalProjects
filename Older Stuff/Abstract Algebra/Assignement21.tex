@@ -1,0 +1,291 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 21}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{4.1.1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Find all the elements in $\mathbb{Z}_{24}$ that are invertible in $\mathbb{Z}_24$
+\end{problem}
+ 
+\begin{proof}
+We know that $\mathbb{Z}_{24}$ elements are $\mathbb{Z} = \{ [0],[1],...,[23] \}$.\\
+We also know that zero nor a zero divisor can be invertible. In turn we get \\ \\
+\centerline{ $\{1,5,7,11,13,17,19,23\}$} \\ \\
+
+Hence we can see that the elements $[n]$ of $\mathbb{Z}$ which are invertible have the form of an a $gcd(n,24)=1$ and those are \\ \\
+\centerline{\fbox{$ [1],[5],[7],[11],[13],[17],[19],[23]$}} \\ \\
+\end{proof}
+
+\begin{problem}{4.1.2}
+Show that any field is an integral domain. 
+\end{problem}
+
+\begin{proof}
+Let $F$ be a field. By definition, $F$ is commutative ring, so to show that $F$ is an integral domain we just need to show that it has no zero divisors. \\ \\
+Suppose $a,b \in F$ and $ab =0$ where $a \neq 0$. Since $F$ is a field than there exist $a^{-1} \in F$ this \\ \\
+\centerline{$ab=0$} 
+\centerline{$a^{-1}(ab)=a^{-1}0$}
+\centerline{$(a^{-1}a)b=0$}
+\centerline{$ib=0$}
+\centerline{$b=0$}\\ \\
+Since $a$ was an arbitrary nonzero elements of $F$, it follows that there is no zero divisors in $F$ \\ \\
+\centerline{\fbox{Hence, all fields are integral domains}} \\ \\
+\end{proof}
+
+\begin{problem}{4.1.3}
+Show that $\mathbb{Z}_n$ is a field if and only if $n$ is a prime.
+\end{problem}
+
+\begin{proof}
+Suppose that $n$ is not prime and consider the ring $\mathbb{Z}_n$ \\ 
+Then there exists positive integers $1<k$,$m<n$ such that $n=km$, but then $[k][m]=[n]=0$ hence there are zero divisors in $\mathbb{Z}_n$. This menas that $\mathbb{Z}_n$ cannot be a field. \\ \\
+\centerline{\fbox{Hence, by contradiction $n$ must be prime!}}
+\end{proof}
+ 
+\begin{problem}{4.1.4}
+Verify that Example 8 is a ring. Find all its invertible elements. 
+\end{problem}
+
+\begin{proof} 
+Let $\mathbb{Q}_{odd} = \{ \dfrac{p}{q} | p,q \in Z, gcd(p,q)=1, q\neq 0$, and q is odd. \\ \\
+Also $\dfrac{0}{1} \in \mathbb{Q}_{odd}$ and $\dfrac{1}{1} \in \mathbb{Q}_{odd}$ and $\mathbb{Q} \neq \emptyset$ \\ \\
+Let $\dfrac{p_1}{q_1}, \dfrac{p_2}{q_2} \in \mathbb{Q}_{odd}$ then we achieve that \\ \\
+$\dfrac{p_1}{q_1} -  \dfrac{p_2}{q_2} = \dfrac{p_1q_2-p_2q_1}{q_1q_2} \in \mathbb{Q}_{odd}$ \\ \\
+This makes it where $\dfrac{p}{q}$ is invertible in $\mathbb{Q}_{odd}$ if and only if $p$ is odd. \\ \\
+\centerline{\fbox{Hence all the invertible elements are only when $p$ is odd}} \\ \\
+\end{proof}
+
+\begin{problem}{4.1.7}
+Work out the following \\ 
+(a)
+ $$\begin{pmatrix}
+	1 & 2\\
+	4 & -7
+	\end{pmatrix}
+	\begin{pmatrix}
+	\dfrac{1}{5} & \dfrac{2}{3} \\
+	0 & 1
+	\end{pmatrix}
+	$$
+\bigskip
+(b)
+ $$\begin{pmatrix}
+	1 & 1\\
+	1 & 1
+	\end{pmatrix}^2
+	$$
+	\bigskip
+	(c)
+	 $$\begin{pmatrix}
+	\dfrac{1}{2} & \dfrac{1}{2}\\
+	0 & 0
+	\end{pmatrix}^3
+	$$
+	\bigskip
+	(d)
+	 $$\begin{pmatrix}
+	a & b\\
+	c & d
+	\end{pmatrix}
+	\begin{pmatrix}
+	1 & 0 \\
+	0 & 0
+	\end{pmatrix}
+	-
+	\begin{pmatrix}
+	1 & 0 \\
+	0 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+	a & b\\
+	c & d
+	\end{pmatrix}
+	$$
+\end{problem}
+
+\begin{proof} 
+All of these are done by using simply matrix algebra. I will not type all my work and simply put the outcomes of each. \\ \\
+(a)  $$\begin{pmatrix}
+	\dfrac{1}{5} & \dfrac{8}{3}\\
+	\dfrac{4}{5} & \dfrac{-13}{3}
+	\end{pmatrix}
+	$$
+	\bigskip
+	(b)
+	$$\begin{pmatrix}
+	2 & 2\\
+	2& 2
+	\end{pmatrix}
+	$$
+	\bigskip
+	(c)
+	$$\begin{pmatrix}
+	\dfrac{1}{8} & \dfrac{1}{8}\\
+	0 & 0
+	\end{pmatrix}
+	$$
+	\bigskip
+	(d)
+	$$\begin{pmatrix}
+	0 & -b\\
+	c & 0
+	\end{pmatrix}
+	$$
+	\bigskip
+\end{proof}
+
+\begin{problem}{4.1.8}
+Find all the matrices $$\begin{pmatrix}
+	a & b\\
+	c & d
+	\end{pmatrix}
+	$$
+	such that 
+	$$\begin{pmatrix}
+	a & b\\
+	c & d
+	\end{pmatrix}
+	\begin{pmatrix}
+	1 & 0\\
+	0 & 0
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	1 & 0\\
+	0 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+	a & b\\
+	c & d
+	\end{pmatrix}
+	$$
+\end{problem}
+
+\begin{proof} 
+From the previous problem we know that this will end up being 
+$$\begin{pmatrix}
+	a & 0\\
+	c & 0
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	a & b\\
+	0 & 0
+	\end{pmatrix}
+	$$
+	We can see that b=c=0. Hence the set of all such matrices that satisfy the condition above is 
+	$$\begin{pmatrix}
+	a & 0\\
+	0 & d
+	\end{pmatrix}
+	$$
+	Where $a,d$ are arbitrary real numbers. \\ \\
+\end{proof}
+
+\begin{problem}{4.1.9}
+Find all $2 \times 2$ matrices 
+$$ \begin{pmatrix}
+a &b \\
+c &d 
+\end{pmatrix}
+$$ 
+that commute with all $2 \times 2$ matrices. \\ \\
+\end{problem}
+
+\begin{proof}
+From problem 8 we have that 
+$$\begin{pmatrix}
+	a & 0\\
+	0 & d
+	\end{pmatrix}
+	$$
+	
+From here we can create an arbitrary $2 \times 2$ matrix. 
+$$\begin{pmatrix}
+	a & 0\\
+	0 & d
+	\end{pmatrix}
+	\begin{pmatrix}
+	p & q \\
+	r & s
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	p & q \\
+	r & s
+	\end{pmatrix}
+	\begin{pmatrix}
+	a & 0\\
+	0 & d
+	\end{pmatrix}
+	$$
+	This equals 
+	$$\begin{pmatrix}
+	ap & aq\\
+	dr & ds
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	ap & dq \\
+	ar & ds
+	\end{pmatrix}
+	$$
+	We can see that $a=d$. Hence all matrix of the forms 
+	$$
+	\begin{pmatrix}
+	a & 0 \\
+	0 &a
+	\end{pmatrix}
+	$$
+	commutes with ever $2 \times 2$ matrices because 
+	$$ 
+	\begin{pmatrix}
+	a & 0 \\
+	0 & a
+	\end{pmatrix}
+	=
+	a \begin{pmatrix}
+	1 & 0 \\
+	0 & 1
+	\end{pmatrix}
+	$$ 
+	Where $a$ is some scalar and identity matrix commutes with every other matrix. \\ \\
+\end{proof}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

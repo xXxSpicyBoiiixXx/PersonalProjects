@@ -1,0 +1,126 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{The Age of M12}% Force line breaks with \\
+\thanks{A project, not a journal article}%
+
+\author{Md Ali}
+ \email{mha27@txstate.edu}
+\affiliation{%
+ Physics Department, Texas State University\\
+ PHYS 3313 Astrophysics
+}%
+
+\collaboration{Spicy Boiiis Inc.}%\noaffiliation
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+In this project we investigated the age of M12 or Messier 12. We utilized an Aperture Photometry Tool and Microsoft Excel with easy coding using Python to estimate the age and distance of M12.
+\end{abstract}
+
+\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
+                             % Classification Scheme.
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\tableofcontents
+
+\section{\label{sec:level1}Background}
+
+Messier 12 or M12 is a globular cluster in the constellation of Ophiuchus. In dark conditions this cluster can be faintly seen with a pair of binoculars. M12 is about 15700 light years or 4800 parsecs from Earth and has a spatial diameter of about 75 light years. M12 is also approaching Earth at a velocity of 16 km/s. M12 can be seen in fig 1.
+
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2in]{M12_Hubble-e1462213034146.jpg} 
+   \caption{M12}
+   \label{fig:example}
+\end{figure}
+
+\section{\label{sec:level2}Procedure}
+
+We utilized an Aperture Photometry Tool with out given data of the wavelengths in B and V to create two separate excel files. Afterwards I created a third excel file that used the intensities and magnitudes of the values needed, we created a whole list of magnitudes of B and V values. Using this values we were able to achieve a suitable range of data points to plot. Afterwards, we must use nine different isochrones to find the average age of M12. Once we find the right isochrones that match the points on the graph, we are then able to find the aver age of M12. We then used the computer to figure out what the distance of the cluster is. In figure 2 is the final graph of the computer simulation.
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=3in]{plotoftheshit.jpg} 
+   \caption{Plot of B-V versus B}
+   \label{fig:example}
+\end{figure}
+
+
+\section{\label{sec:level3}Conclusion}
+
+Overall, after computing and fitting the plot we found that the age of M12 is approximately anywhere from $7.00\cdot10^{9}$ to $1.30\cdot10^{10}$ years. This is shown on our graph with all three isochrones plotted we can see gain this, knowing this we can see that the average of all three isochrones is $1.00\cdot10^{10}$ years. This means the age of M12 is $1.00\cdot10^{10}$ years. When the computer program completed running we found that M12 is 2511.9 pc. In conclusion, this project did not have much to talk about and was more on the lines of receiving and creating the data needed.
+
+
+
+
+
+
+
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******

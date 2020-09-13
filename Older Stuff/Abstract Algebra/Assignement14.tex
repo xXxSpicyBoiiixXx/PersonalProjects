@@ -1,0 +1,140 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 14}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.5.2} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Recall that $G \simeq G'$ means that $G$ is isomorphic to $G'$. Prove that for all groups $G_1,G_2,G_3$:
+\end{problem}
+ 
+\begin{proof}
+There are three parts to this problem. \\ \\
+(a) $G_1 \simeq G_1$ \\ \\
+Considering the identity homomorphism on $G_1$ as: \\ \\ 
+\centerline{$id: G_1 \rightarrow G_1$} \\ \\ 
+Trivially an identity map is one to one and onto in $G_1$ So, $id: G_1 \rightarrow G_1$ is an isomorphism between $G_1$ to itself hence, $G_1 \simeq G_1$. Hence result. \\ \\
+(b) $G_1 \simeq G_2$ implies that $G_2 \simeq G_1$ \\ \\
+Since, $G_1 \simeq G_2$ there exists an isomorphism between $G_1$ and $G_2$ say, $\phi$. \\ 
+$\phi: G_1 \rightarrow G_2$ is an isomorphism $\rightarrow \phi^{-1}$ exists and it's also a bijective homomorphism, hence an isomorphism. \\ \\
+Therefore $\phi^{-1}:G_2 \rightarrow G_1$ is an isomorphism implies that $G_2 \simeq G_1$. Hence result. \\ \\
+(c) $G_1 \simeq G_2$, $G_2 \simeq G_3$ implies that $G_1 \simeq G_3$ \\ \\
+From the questions there exist isomorphisms $\phi: G_1 \rightarrow G_2$ and $\psi: G_2 \rightarrow G_3$. \\ 
+Let us now consider the map $\rho: G_1 \rightarrow G_3$, by the assignment $\rho = \psi \phi$, composition of $\phi$ and $\psi$ \\ \\
+We achieve: \\ \\
+\centerline{$\rho(ab)=(\psi \phi)(ab)=\psi(\phi(a)\phi(b)) = \psi(\phi(a))\psi(\phi(b))=(\psi \phi)(a)(\psi \phi)(b)$, $\forall$ $a,b \in G_1$} \\ \\
+This means that $\psi \phi$ is a group homomorphism! Since both of $\psi$ and $\phi$ are bijective, it follows that $\psi \phi$ is bijective. Also, $\psi \phi$ is an isomorphisms hence $\rho$ is an isomorphism from $G_1$ to $G_3$. \\ \\
+Hence $G_1 \simeq G_3$. Hence result. \\ \\
+
+\end{proof}
+
+\begin{problem}{2.5.3}
+Let $G$ be any group and $A(G)$ the set of all one to one mappings of $G$, as a set, onto itself. Define $L_a: G \rightarrow G$ by $L_a(x)=xa^{-1}$.
+\end{problem}
+
+\begin{proof}
+There are three parts to this problem. \\ \\
+(a) $L_a \in A(G)$ \\ \\
+The function $L_a$ by definition has domain and codomain $G$. We must prove that it is indeed one to one and onto. \\ \\
+First let's look at one to one, let $g_1,g_2 \in G$. \\ \\
+\centerline{Now we get $L_a(g_1)=L_a(g_2) \rightarrow g_1a^{-1} = g_2a^{-1}$} \\ \\
+By the cancellation property in groups we get that $g_1 = g_2$, hence $L_a$ is one to one. \\ \\ \\
+Now let's look at onto, let $g$ be an arbitrary element of $G$. Then since $a$ is also in $G$ we get \\ \\
+\centerline{$ga \in G$, so $L_a(ga)=gaa^{-1}=g$, hence $g$ is in the image of $G$. Hence result }\\ \\
+
+(b) $L_aL_b=L_{ab}$ \\ \\
+\centerline{$L_aL_b(x) =L_a(L_b(x))$}
+\centerline{$=L_a(xb^{-1})$}
+\centerline{$=xb^{-1}a^{-1}$}
+\centerline{$=x(ab)^{-1}$}\\ \\
+\centerline{$=L_{ab}(x)$ $\forall$ $x \in G$ Hence result.}  \\ \\
+
+(c) The mapping $\psi: G \rightarrow A(G)$ defined by $\psi (a) = L_a$ is a monomorphism of $G$ into $A(G)$ \\ \\
+Recall that a monomorphism is a one to one homomorphism. We must show that $\psi$ is one to one, suppose that $\psi(a) = \psi(b)$ then we get that:  \\ \\
+\centerline{$L_a=L_b$, hence $L_a$ and $L_b$ are equal functions.} \\ \\
+\centerline{Hence they are equal at all the points of their domain}\\ \\
+The fact that $\psi$ is homomorphism is basically from part be hence result. \\ \\
+\end{proof}
+
+\begin{problem}{2.5.6}
+Prove that if $\phi : G \rightarrow G'$ is a homomorphism, then $\phi (G)$, the image of $G$, is a subgroup of $G'$
+\end{problem}
+
+\begin{proof}
+We are given that $G$ and $G'$ are two groups that $\phi : G \rightarrow G'$ is a homomorphism. We must prove that $\phi (G)$ is a subgroup of $G'$ \\ \\
+$\phi (G)$ is a non empty subset of $G'$. Let $a' \in \phi(G)$ and $b' \in \phi(G)$ \\
+Then there exists elements $a,b$ in $G$ such that \\ \\
+\centerline{$\phi (a) = a'$ and $\phi (b) = b'$}
+\centerline{$ab^{-1} \in G$}
+\centerline{$a'(b')^{-1}=\phi (a) \psi(b) ^{-1}$}
+\centerline{$=\phi (a) \phi (b^{-1})$}
+\centerline{$=\phi(ab^{-1}) \in \phi(G)$} \\ \\
+\centerline{Hence, $a',b' \in \phi(G) \rightarrow a'b'^{-1} \in \phi(G)$} \\ \\
+\centerline{\fbox{Hence, $\phi(G)$ is a subgroup of $G'$}}
+\end{proof}
+ 
+ \begin{problem}{2.5.7}
+Prove that $\phi : G \rightarrow G'$, where $\phi$ is homomorphism, is a monomorphism if and only if Ker $\phi = (e)$
+\end{problem}
+
+\begin{proof}
+We must prove $\phi$ is a monomorphism if and only if Ker $\phi = (e)$ \\ \\
+Let us assume that $\phi$ is a monomorphism \\ \\
+\centerline{$\phi(x) = \phi(y) \rightarrow x = y$ $\forall$ $x,y \in G$} \\ \\ 
+\centerline{$Ker(\phi) = \{ g \in G | \phi(g) = e \}$} \\ \\
+Let, $x \in Ker(\phi)$ \\ \\
+\centerline{$\phi (x) = e = \phi(G) \rightarrow x = e$, when $\phi$ is one to one} \\ \\
+Without loss of generality you can just assume the contrary and prove it backwards. Hence result. \\ \\
+\end{proof}
+
+\begin{lemma}{2.5.2}
+If $\phi$ is a homomorphism of $G$ into $G'$, then: \\ 
+(a) $\phi (e) = e'$, the unit element of $G'$ \\ 
+(b) $\phi (a^{-1}) = \phi(a)^{-1}$ $\forall$ $a \in G$
+\end{lemma}
+
+\begin{proof}
+Since $x = xe$, $\phi(x) = \phi(xe) = \phi(x) \phi(e)$. By cancellation in $G'$ we get $\phi(e) = e'$. Also, $\phi(aa^{-1}) = \phi(e) = e'$, hence $e' = \phi(aa^{-1})= \phi(a)\phi(a^{-1})$. This prove thats $\phi(a^{-1}) = \phi(a)^{-1}$ \\ \\
+\end{proof}
+
+
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

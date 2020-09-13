@@ -1,0 +1,97 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Enumeration Chess Problems (Unsolved)}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Combinatorics 4350} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+How many solutions are there in figure 1 with helpmate in 34?
+
+\end{problem}
+ 
+\begin{proof}
+This problem has four different problems. \\ \\
+(a) $(i+j)(i-j) = i \times i + j \times i - i \times j - j\times j = (-1)+(-k)-k-(-1) = -1-k-k+1 = -2k$ \\ \\
+(b) $(1-i+2j-2k)(1+2i-4j+6k)$ \\ 
+$1\times 1 - i\times 1+2j \times 1 -2k \times 1+ 1\times 2i -i\times 2i+2j \times 2i -2k \times 2i -1 \times 4j +i\times 4j -2j \times 4j + 2k \times 4j+ 1\times 6k- i\times 6k+2j\times 6k-2k\times 6k$ \\ 
+$\rightarrow 1 + 2 +8 + 12 - i + 2i-8i +12i + 2j -8j +6j -2k-4k+4k+6k$ \\ 
+ $(1-i+2j-2k)(1+2i-4j+6k) = 23 + 5i +0j +4k = 23 + 5i + 4k$ \\ \\ 
+ (c) I will just be posting the answers to the next ones since the last day to turn in homework is April 25th and I need to study for the test.. \\
+ $(2i-3j+4k)^2 = -29$ \\ \\
+ (d) $i(\alpha_0 + \alpha_1i +\alpha_2j +\alpha_3k)-(\alpha_0 + \alpha_1i +\alpha_2j +\alpha_3k)i = -2 \alpha_3 j + 2 \alpha_2k$ \\ \\
+\end{proof}
+
+\begin{problem}{4.1.14}
+Show that the only quaternions commuting with $i$ are of the form $\alpha + \beta i$.
+\end{problem}
+
+\begin{proof}
+Again needing to study for my exam will be concise. \\ \\
+\centerline{$i(\alpha + \beta i) = i\alpha -\beta = \alpha i + \beta(i \times i) = (\alpha +i \beta)i$} \\ \\
+We can't have something say the form of $\gamma j + \pi k$ to commute with $i$. \\ \\
+\centerline{$i(\gamma j + \pi k) = \gamma k - \pi j$} \\ \\
+\centerline{$(\gamma j + \pi k)i=- \gamma k + \pi j$} \\ \\
+Thus we achieve that $i(\gamma j + \pi k) = (\gamma j + \pi k)i$ implies that $\gamma = \pi = 0$ hence result. \\ \\
+\end{proof}
+
+\begin{problem}{4.1.15}
+Find the quaternions that commute with both $i$ and $j$.
+\end{problem}
+
+\begin{proof}
+We can use the previous problem for this one as well hence the quaternion that commute with both $i$ and $j$ are in the form of \\ \\
+\centerline{$\alpha +0i +0j+0k$, hence result} \\ \\
+\end{proof}
+ 
+\begin{problem}{4.1.16}
+Verify that \\ \\
+$(\alpha_0 + \alpha_1i +\alpha_2j +\alpha_3k)(\alpha_0 - \alpha_1i -\alpha_2j -\alpha_3k) = \alpha^2_0+\alpha^2_1+\alpha^2_2+\alpha^2_3$
+\end{problem}
+
+\begin{proof} 
+In total we have that \\ \\
+\centerline{$\alpha_0(\alpha_0 - \alpha_1i -\alpha_2j -\alpha_3k) = \alpha_0^2-\alpha_0\alpha_1i-\alpha_0\alpha_2j-\alpha_0\alpha_3k$} \\
+\centerline{$\alpha_1i(\alpha_0 - \alpha_1i -\alpha_2j -\alpha_3k) = \alpha_1^2+\alpha_0\alpha_1i+\alpha_1\alpha_3j-\alpha_1\alpha_2k$} \\
+\centerline{$\alpha_2j(\alpha_0 - \alpha_1i -\alpha_2j -\alpha_3k) = \alpha_2^2-\alpha_2\alpha_3i+\alpha_0\alpha_2j+\alpha_1\alpha_2k$} \\
+\centerline{$\alpha_3k(\alpha_0 - \alpha_1i -\alpha_2j -\alpha_3k) = \alpha_3^2+\alpha_2\alpha_3i-\alpha_1\alpha_3j+\alpha_0\alpha_3k$} \\ \\ 
+Add all of these together we get \\ \\
+\centerline{$(\alpha_0 + \alpha_1i +\alpha_2j +\alpha_3k)(\alpha_0 - \alpha_1i -\alpha_2j -\alpha_3k) = \alpha^2_0+\alpha^2_1+\alpha^2_2+\alpha^2_3$} \\ \\
+\end{proof}
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

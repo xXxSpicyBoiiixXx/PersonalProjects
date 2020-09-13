@@ -1,0 +1,109 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 11}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.3.9} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Give an example of a nonabelian group for which he H in Problem 8 is not a subgroup.
+\end{problem}
+ 
+\begin{proof}
+Let us consider $G=S_3$ \\ \\ 
+We know that $H = \{ a \in G | a^2 = e\}$ and we're forcing the condition of $G=S_3$. \\ \\
+\centerline{$ \{ e,s,rs,r^2s \}$ $(e^2 = (rs)^2 = r^2s^2=s^2=e)$} \\ \\
+\centerline{\fbox{but $4 \nleq S_3$ since $(rs) \cdot s = r$ not in H. Hence result.}} \\ \\
+\end{proof}
+
+\begin{problem}{2.3.10}
+If $G$ is an abelian group and $n > 1$ an integer, let $A_n = \{ a^n | a \in G \}$. Prove that $A_n $ is a subgroup of $G$.
+\end{problem}
+
+\begin{proof}
+$A_n$ is a subset of $G$ containing all elements like $a^n$ for $a \in G$ We must prove that $A_n$ is a subgroup of $G$ Let's assume $G$ is non trivial group. Then $A_n$ contains the identity element $e$, since \\ \\
+\centerline{$e^n = e \in A_n$} \\ \\
+Let $p \in A_n, q \in A_n$ \\ \\
+\centerline{$p=a^n,q=b^n$ for some elements $a,b \in G$} \\
+\centerline{$pq = a^nb^n = (ab)^n \in A_n$, since G is abelian}
+\centerline{$p^{-1}=a^{-n}=(a^{-1})^n \in A_n$, since $a^{-1} \in G$}
+\centerline{$p \in A_n, q \in A_n \rightarrow pq \in A_n$}
+\centerline{$p \in A_n \rightarrow p^{-1} \in A_n$} \\ \\
+\centerline{\fbox{From above we can see that $A_n$ is a subgroup of $G$. Hence Result.}} \\ \\
+\end{proof}
+
+\begin{problem}{2.3.12}
+Prove that a cyclic group is abelian.
+\end{problem}
+
+\begin{proof}
+Suppose $G$ is a cyclic group and $a$ be a generator of $G$. We must prove that $G$ is abelian. \\ \\
+Let $p,q \in G$
+\centerline{$p=a^r,q=a^s$ for some integers $r$ and $s$}
+\centerline{$pq=a^ra^s=a^{r+s}$ and $qp=a^sa^r=a^{s+r}$} \\ \\
+Since $r+s=s+r$ through the associative property of addition we can see that it follows that \\ \\ 
+\centerline{$pq=qp$ $\forall$ $p,q \in G$} \\ \\
+\centerline{\fbox{Hence G is abelian from above}} \\ \\
+\end{proof}
+ 
+ \begin{lemma}{2.3.1}
+A nonempty subset $A \subset G$ is a subgroup of G if and only if A is closed with respect to the operation of G and, given $a \in A$, then $a^{-1} \in A$. 
+\end{lemma}
+
+\begin{proof}
+There's a ton of examples in the text as well as I'm kinda running out of time... lol
+\\ \\
+\centerline{\fbox{Look at pages 52-54 for many examples.}} 
+\bigskip
+\end{proof}
+
+\begin{lemma}{2.3.2}
+Suppose that G is a group and H is nonempty finite subset of G is closed under the product in G. Then H is a subgroup of G.
+\end{lemma}
+
+\begin{proof}
+By Lemma 2.3.1 we must show that $a \in H$ implies $a^{-1}\in H$. If $a = e$, then $a^{-1} = e$ and we are done! \\ \\
+Now let's look at the case where $a \neq e$. \\ \\
+Consider the elements $a,a^2,...,a^{n+1}$, where $n = |H|$, the order of $H$.This can only happen if some two of the elements listed are equal hence $a^i = a^j$ for some $1 \leq i < j \leq n+1$. Then by the cancelation property $a^{j-i} = e$. Since $j-i \geq 1, a^{j-i} \in H$, hence $e \in H$. However, $j-i-1 \geq 0$, so $a^{j-i-1} \in H$ and $aa^{j-i-1} = a^{j-i} = e$, where $a^{-1} = a^{j-i-1} \in H$ \\ \\
+\centerline{\fbox{Hence from the above explanation this proves the lemma.}} \\ \\
+
+\end{proof}
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

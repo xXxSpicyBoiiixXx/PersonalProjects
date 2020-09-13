@@ -1,0 +1,133 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 19}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{3.2.1} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Show that if $\sigma$, $\tau$ are two disjoint cycles, then $\sigma \tau = \tau \sigma$
+\end{problem}
+ 
+\begin{proof}
+We are given $\sigma$, $\tau$ $\in S_n$ \\ \\
+If $i \in \{ 1 ,..., n \}$ then either $\tau (i) = \sigma (i) = i$ or at most one of them doesn't map $i$ to $i$. \\
+By the first case \\ \\
+\centerline{$\sigma ( \tau (i) ) = \sigma (i) = i$} 
+\centerline{$\tau ( \sigma (i) ) = \tau (i) = i$} \\ \\
+Now suppose without loss of generality we get \\ \\
+\centerline{$\tau (i) = i$ and $\sigma(i) = i$} \\ \\
+Then we have that \\ \\
+\centerline{$\sigma ( \tau (i) ) = \sigma(i)$ and $\tau ( \sigma (i)) = \sigma(i)$}
+Taking both of the above we results we can see that $\sigma \tau = \tau \sigma$ \\ \\
+\centerline{\fbox{Hence $\sigma \tau = \tau \sigma$}}
+
+\end{proof}
+
+\begin{problem}{3.2.2}
+Find the cycle decomposition and order.
+\end{problem}
+
+\begin{proof}
+This problem has three parts. \\ \\
+(a) $\displaystyle{123456789 \choose 314276985}$ \\ 
+we get that this will equal \\ \\
+\centerline{(1342)(579) and the order is 12} \\ \\ \\
+(b) $\displaystyle{1234567 \choose 7654321}$ \\
+we get that this will equal \\ \\
+\centerline{(17)(26)(35) and the order is 2} \\ \\ \\
+(c) $\displaystyle{1234567 \choose 7653421} \displaystyle{1234567 \choose 2315674}$
+The product of these are $\displaystyle{1234567 \choose 6574213}$
+we get that this will equal \\ \\ \\
+\centerline{(16)(25)(37) and the order is 2} \\ \\ 
+
+\end{proof}
+
+\begin{problem}{3.2.3}
+Express as the product of disjoint cycles and find the order.
+\end{problem}
+
+\begin{proof}
+This problem has six parts. \\ \\
+(a) (1 2 3 5 7)(2 4 7 6) \\ 
+This equals \\ \\ 
+$\displaystyle{1234567 \choose 2451736} = (124)(3576)$ and the order is 12 \\ \\ \\
+(b) (1 2)(1 3)(1 4) \\
+This equals \\ \\
+$\displaystyle{1234 \choose 4123} = (1432)$ and the order is 4 \\ \\ \\
+(c) (1 2 3 4 5)(1 2 3 4 6)(1 2 3 4 7) \\
+This equals \\ \\
+$\displaystyle{1234567 \choose 4567123} = (1473625)$ and the order is 7 \\ \\ \\
+(d) (1 2 3)(1 3 2) \\
+This equals \\ \\
+$\displaystyle{123 \choose 123} = (1)(2)(3)$ and the order is 1 \\ \\ \\
+(e) (1 2 3)(3 5 7 9)(1 2 3)$^{-1}$ \\
+This equals \\ \\
+$\displaystyle{123456789 \choose 523476981} = (1579)$ and the order is 4 \\ \\ \\
+(f) (1 2 3 4 5)$^3$ \\ 
+This equals \\ \\
+$\displaystyle{12345 \choose 45123} = (14253)$ and the order is 5 \\ \\ \\
+\end{proof}
+ 
+\begin{problem}{3.2.6}
+Find a shuffle of a deck of 13 cards that requires 42 repeats to return the cards to their original order.
+\end{problem}
+
+\begin{proof} 
+We must find where the order is 42 so when the least common multiple is 42. The only numbers that can do this is 6 and 7. So we will achieve that \\ \\
+\centerline{(1 2 3 4 5 6 7)(8 9 10 11 12 13) Hence result} \\ \\
+
+\end{proof}
+
+\begin{problem}{3.2.7}
+Do problem 6 for a shuffle requiring 20 repeats.
+\end{problem}
+
+\begin{proof}
+Same logic but now the order is 20 and the least common multiple is 20. We achieve \\ \\
+\centerline{(1 2 3 4 5)(6 7 8 9) Hence result} \\ \\
+\end{proof}
+
+\begin{problem}{3.2.9}
+Given the two transpositions (1 2) and (1 3), find a permutation $\sigma$ such that $\sigma$(1 2)$\sigma^{-1}$ = (1 3)
+\end{problem}
+
+\begin{proof}
+We can easily see that there are only two choices here which are \\ \\
+\centerline{$\sigma =$ (1 3 2) or (2 3). hence result}
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

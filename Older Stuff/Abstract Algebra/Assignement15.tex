@@ -1,0 +1,115 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 15}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.5.8} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Find an isomorphism of $G$, the group of all real numbers under $+$, onto $G'$, the group of all positive real numbers under multiplication. 
+\end{problem}
+ 
+\begin{proof}
+Let $G$ be a group of real number with "$+$" as the operation. Let $G'$ be the group of positive real number with "$\times$" as the operation. We must find an isomorphism between $G$ and $G'$. \\ 
+
+Let's suppose $\phi : G \rightarrow G'$ and $\phi (x) = e ^{x}$. This is clearly homomorphism due to the fact that \\
+\centerline{$\phi (x+y) = e^{x+y} =e^x \cdot e^y = \phi (x) \phi (y)$} \\ \\
+We can see that $e^{x}$ is one to one and onto, hence this is isomorphism. \\ \\
+\centerline{\fbox{Hence, $e^{x}$ is an ismorphism between $G$ and $G'$}} \\ \\
+
+\end{proof}
+
+\begin{problem}{2.5.12}
+Prove that if $Z(G)$ is the center of $G$, then $Z(G) \triangleleft G$. \\ 
+\end{problem}
+
+\begin{proof}
+We must show that the centre $Z(G)$ of a group $G$ is a normal subgroup $G$. \\ \\
+The centre $Z(G) = \{ x \in G | xg = gx$ $\forall$ $g \in G$ is a subgroup of $G$. \\ \\
+Let's suppose that $H = Z(G)$ and let $a \in G$ Then we must prove that $aH = Ha$. \\ \\
+Let $p \in aH$ \\ \\
+\centerline{$p = ah_1$ for some $h_1 \in H$ and $ah_1=h_1a$, since $h_1 \in Z(G)$} \\ \\
+We then achieve that $aH \subset Ha$, now let $q \in Ha$ \\ \\
+\centerline{$q = h_2a$ for some $h_2 \in H$ and $h_2a = ah_2$, since $h_2 \in Z(G)$} \\ \\
+\centerline{$q \in Ha \rightarrow q \in aH$ then $Ha \subset aH$} \\ \\
+\centerline{\fbox{Hence $aH = Ha$, $Z(G)$ is normal in $G$}} \\ \\
+\end{proof}
+
+\begin{problem}{2.5.14}
+If $G$ is abelian and $\phi: G \rightarrow G'$ is a homomorphism of $G$ onto $G'$, prove that $G'$ is abelian.
+\end{problem}
+
+\begin{proof}
+We are given that $G$ and $G'$ are two groups and $\phi$ is an onto homomorphism of $\phi: G \rightarrow G'$. We must prove that if $G$ is abelian, then $G'$ is abelian. \\ \\
+Let $a'$,$b'$ be two elements in $G'$.  \\
+Since $\phi$ is an onto homomorphism there exist elements $a,b$ in $G$ such that \\ \\
+\centerline{$\phi(a) = a'$ and $\phi(b) = b'$} \\ \\
+\centerline{$a'b' = \phi (a) \phi (b) = \phi (ab) = \phi(ba) = \phi(b)\phi(a) = b'a'$} \\ \\
+Hence for any elements $a'$,$b' \in G' \rightarrow a'b' = b'a'$ \\ \\
+\centerline{\fbox{Hence, G' is ablian}} \\ \\
+\end{proof}
+ 
+ \begin{problem}{2.5.17}
+If $M \triangleleft G, N \triangleleft G$, prove that $M \cup N \triangleleft G$.
+\end{problem}
+
+\begin{proof}
+We are given that $G$ is a group and $M,N$ are two normal subgroups of $G$. We must prove that $M \cap N$ is a normal subgroup of $G$. \\ \\
+We know that the intersection of two subgroups of $G$ is a subgroup of $G$. Hence, $M \cap N$ is a subgroup of $G$. We need to show that $M \cap N$ is normal in G. \\ \\
+Let us consider $g \in G$ and $x \in M \cap N$ \\ \\
+\centerline{$x \in M$ and $x \in N$} \\ \\
+Since $M$ and $N$ is normal in $G$, we achieve \\ \\
+\centerline{$x \in M,N$, $g\in G \rightarrow gxg^{-1}\in M,N$} \\ \\
+This makes $gxg^{-1} \in M \cap N$ \\ \\
+Hence $x\in M \cap N, g\in G \rightarrow gxg^{-1} \in M \cap N$. \\ \\
+\centerline{\fbox{$M \cap N$ is normal in $G$.}} \\ \\
+\end{proof}
+
+\begin{lemma}{2.5.3}
+If $\phi$ is a homomorphism of $G$ into $G'$ , then the image of $\phi$ is a subgroup of $G'$ 
+\end{lemma}
+
+\begin{proof}
+We can look at the definition, since this lemma prompts the definition that if $\phi$ is a homomorphism of $G$ into $G'$, then the kernal of $\phi$, $Ker \phi$, is defibned by $Ker \phi = \{ a \in G | \phi (a) = e' \}$. \\ \\
+\end{proof}
+
+
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

@@ -1,0 +1,82 @@
+%% ****** Start of file template.aps ****** %
+%%
+%%
+%%   This file is part of the APS files in the REVTeX 4 distribution.
+%%   Version 4.0 of REVTeX, August 2001
+%%
+%%
+%%   Copyright (c) 2001 The American Physical Society.
+%%
+%%   See the REVTeX 4 README file for restrictions and more information.
+%%
+%
+% This is a template for producing manuscripts for use with REVTEX 4.0
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+%
+% Group addresses by affiliation; use superscriptaddress for long
+% author lists, or if there are many overlapping affiliations.
+% For Phys. Rev. appearance, change preprint to twocolumn.
+% Choose pra, prb, prc, prd, pre, prl, prstab, or rmp for journal
+%  Add 'draft' option to mark overfull boxes with black boxes
+%  Add 'showpacs' option to make PACS codes appear
+\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for review and submission
+%\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
+\usepackage{graphicx}  % needed for figures
+\usepackage{dcolumn}   % needed for some tables
+\usepackage{bm}        % for math
+\usepackage{amssymb}   % for math
+
+% avoids incorrect hyphenation, added Nov/08 by SSR
+\hyphenation{ALPGEN}
+\hyphenation{EVTGEN}
+\hyphenation{PYTHIA}
+
+
+\begin{document}
+
+% The following information is for internal review, please remove them for submission
+\widetext
+\leftline{Version 01 as of \today}
+\leftline{Primary Authors: Md H. I. Ali}
+\leftline{Additional Investigators: Charles Condons, Ian Anderson}
+\leftline{To be submitted to Department of Physics, Texas State University}
+\bigskip
+\centerline{\em INTERNAL DOCUMENT -- NOT FOR PUBLIC DISTRIBUTION}
+
+% the following line is for submission, including submission to the arXiv!!
+%\hspace{5.2in} \mbox{Fermilab-Pub-04/xxx-E}
+
+\title{Drone Final Project}     % D0 authors (remove the first 3 lines
+                             % of this file prior to submission, they
+                             % contain a time stamp for the authorlist)
+                             % (includes institutions and visitors)
+\date{\today}
+
+
+\begin{abstract}
+We are constructing a drone for our final project in advance lab and we will be utilizing an Arduino, flight controller, sound sensors, four brushless motors, four ESC, a frame, four propellers, li-po battery, big zip-ties, and many wires.
+\end{abstract}
+\maketitle
+
+%\section{\label{sec:level1}First-level heading}
+% sections are not used for PRL papers
+\section{\label{sec: level1}I. Introduction}
+The purpose of this project is to make the drone autonomous, meaning the drone will be sensitive to its surroundings and will respond accordingly without the aid of a controller. This is particularly useful in the aid of possibly a delivery drone and other commercial attributes. 
+%\subsection{\label{sec:level2}Second-level heading: Formatting}
+
+
+
+\section{\label{sec: level2}II. Method}
+The method used is using the the sound sensors to reading the distances and flooding that into the Arduino utilizing the ping library. From there we can then use the servo library to attach all necessary pins to the flight controller and then the flight controller will adjust however the distances are  At first we were trying to use the self leveling code twice and tried to use correction factors to correct with a gyro called an MPU6050. Which did not work as well due to the fact we were burning out several motors. While researching the problems for this, we came to the conclusion of utilizing a flight controller to control our motors instead of trying to code a flight controller (which we were not given time to do so). We have able to currently manage the drone to hover sending out 1900 
+
+
+
+\section{\label{sec: level3}III. Data}
+We currently do not have data since this is a work in progress. We will be presenting this project on Monday, May 13th on an obstacle  course that consists of how well our drone can make it from point A to point B in a certain amount of time and we will have data at that point of time. 
+
+\section{\label{sec: level4}IV. Conclusion}
+In conclusion there isn't much to talk about this project just yet just because we are still working on it and we have not tested it out completely. I believe if we had significantly more time we could have built a significantly better drone and possibly without the aid of a flight controller, but due to very limited time, supplies, and the nature of the project, this was almost an impossible project which most likely left many groups stumped and stuck. Overall we are determined to get this flying by Monday, we are currently just waiting for the right configuration numbers and the code is complete and ready to test. 
+\end{document}
+%
+% ****** End of file template.aps ******

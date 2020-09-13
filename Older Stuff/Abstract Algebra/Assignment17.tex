@@ -1,0 +1,101 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Assignment 17}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Abstract Algebra MATH 4307} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{2.7.2} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+Let $G$ be the group of all real valued functions on the unit interval $[0,1]$, where we define, for $f,g \in G$, addition by $(f+g)(x)=f(x)+g(x)$ for every $x \in [0,1]$. If $N = \{ f \in G | f(1/4) = 0 \}$, prove that $G/N \cong$ real numbers under $+$.
+\end{problem}
+ 
+\begin{proof}
+Let us consider $\mathbb{R}$ be the set of real number under addition. We want to find a homomorphism $\phi$ from $G$ onto $\mathbb{R}$ such that $Ker(\phi) = N$ We can see this below. \\ \\
+Consider the map $\phi : G \rightarrow \mathbb{R}$ defined as \\ 
+\centerline{$\phi(f) = f(1/4),$ $\forall$ $f \in G$} \\ \\
+We can clearly see the $\phi$ is homomorphism because for any $f,g \in G$ we get \\ 
+\centerline{$\phi(f+g) = (f+g)(1/4) = f(1/4)+g(1/4) = \phi(f) + \phi(g)$} \\ \\
+We can see that $\phi$ is onto $\mathbb{R}$, for any real number $r \in \mathbb{R}$. Knowing this we can take $f(x) = r$ $\forall$ $x \in [0,1]$. We achieve that $\phi(f) = f(1/4) = r$ \\ \\
+Hence from above we can see that $N=Ker(\phi)$ \\ \\
+\centerline{\fbox{By the first homomorphism theorem we achieve that $G/N \cong \mathbb{R}$}} \\ \\
+
+
+\end{proof}
+
+\begin{problem}{2.7.3}
+Let $G$ be the group of nonzero real numbers under multiplication and let $N= \{ 1, -1 \}$. Prove that $G/N \cong$ positive real numbers under multiplication.
+\end{problem}
+
+\begin{proof}
+Let us consider $\mathbb{R}^+$ be the set of real number under multiplication. We must find a homomorphism $\phi$ from $G$ onto $\mathbb{R}^+$ such that $Ker(\phi)=N$. We can see below. \\ \\
+Consider the map $\phi : G \rightarrow \mathbb{R}^+$ defined as \\ 
+\centerline{$\phi(r) = |r|$, $\forall$ $r \neq 0$} \\ \\
+We can clearly see the $\phi$ is homomorphism because for any $f,g \in \mathbb{R} \backslash \{0\} $ we get \\ 
+\centerline{$\phi(f \cdot g) = |f \cdot g| = |f| \cdot |g| = \phi(f) \cdot \phi (g)$} \\ \\
+$\phi$ is onto $\mathbb{R}^+$, as for any positive real number $r \in \mathbb{R}^+$, we get that $\phi(r) = |r| = r$. We also get that $Ker(\phi) = \{ r \in \mathbb{R} \backslash \{0\} | \phi(r) = 1 \}$ hence $Ker(\phi) = \{1,-1 \} = N$ \\ \\
+\centerline{\fbox{By the first homomorphism theorem we achieve that $G/N \cong \mathbb{R}^+$}} \\ \\
+\end{proof}
+
+\begin{problem}{2.7.5}
+Let $G$ be a group, $H$ a subgroup of $G$, and $N \triangleleft G$. Let $HN = \{hn | h \in H, n\in N \}$ Prove that \\ \\
+(a) $H \cap N \triangleleft H$ \\
+(b) $HN$ is a subgroup of $G$\\
+(c) $N \supset HN$ and $N \triangleleft HN$. \\
+(d) $(HN)/N \cong H/(H \cap N)$ \\
+\end{problem}
+
+\begin{proof}
+There are four parts to this problem \\ \\
+(a) We need to prove $H \cap N \triangleleft H$ Let $h \in H$ and $x \in H \cap N$ We must show that $h^{-1}xh \in H \cap N$. We know that $x \in H$ since $H \cap N \subset H$ and $x \in N$ as $H \cap N \subset N$ then \\ \\
+\centerline{$h^{-1}xh \in H$ with $x,h \in H$} \\
+\centerline{$h^{-1}xh \in N$ with $g^{-1}Ng \supset N, \forall g \in G, h\in H \supset G$} \\ \\
+We get $h^{-1}xh \in H \cap N, \forall x \in H \cap N$ Hence we have that $h^{-1}(H \cap N)h \supset H \cap N, \forall h \in H$ so  $H \cap N \triangleleft H$ . Hence result.  \\ \\
+(b) We have to show $HN$ is a subgroup of $G$. To show $HN$ closed under multiplication. Let $h_1,h_2 \in H$ and $n_1,n_2 \in N$. We have to show that $(h_1n_1)(h_2n_2)\in HN$. Since $N$ is normal subgroup of $G$ therefore $h_2^{-1}n_1h_2\in N$ as $h_2^{-1}Nh_2 \supset N$. Thus $n_1h_2=h_2n_3$, for some $n_3 \in N$ we get that \\ \\
+\centerline{$(h_1n_1)(h_2n_2) = h_1(n_1h_2)n_2 = h_1(h_2n_3)n_2=(h_1h_2)(n_3n_2) \in HN$} \\ \\
+We know that the identity element $e \in G$ is in $HN$, as $e \in H$ and $e \in N$. Let $h \in H$ and $n \in N$ we must show that $(hn)^{-1}$. We achieve that \\ \\
+
+\centerline{$(hn)^{-1}=n^{-1}h^{-1} \in Nh^{-1}=h^{-1}N \supset HN$} 
+\bigskip
+Therefore, the inverse of every element in $HN$ is also in $HN$. Hence $HN$ is a subgroup of $G$ \\ \\
+(c) First notice that $N \subset HN$, as for $n \in N$ we get that $n = en \in HN$, where $e\in H \supset G$ Now we have to show that $N \triangleleft HN$. Let $h \in H$ and $n \in N$ we achieve that \\ \\
+\centerline{$(hn)^{-1}N(hn) = n^{-1}(h^{-1}Nh)n \supset n^{-1}Nn = N$} \\ \\
+Hence $N$ is a normal subgroup of HN \\ \\
+(d) I didn't have time to type this one was long. 
+\end{proof}
+ 
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}

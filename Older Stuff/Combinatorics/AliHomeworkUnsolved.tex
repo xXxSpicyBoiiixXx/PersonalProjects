@@ -1,0 +1,101 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ \usepackage{graphicx}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Enumeration Chess Problems}%replace X with the appropriate number
+\author{Md Ali\\ %replace with your name
+Combinatorics 4350} %if necessary, replace with your course title
+ 
+\maketitle
+ 
+\begin{problem}{I} %You can use theorem, exercise, problem, or question here.  Modify x.yz to be whatever number you are proving
+How many solutions are there in figure 1 with helpmate in 34?
+
+\end{problem}
+ \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+    \centering
+    \includegraphics[width=2in]{picone.jpg} 
+    \caption{Problem I}
+    \label{fig}
+ \end{figure}
+
+\begin{proof}
+There are $C_{17} = 34!/(17!18!) = 129644790$ solutions. \\ \\
+As in the Bonsdorff-Vaisanen problem, two Black a-pawns promote to Bishops and then travel to b8 and a7 so that White’s b7 is checkmate. The pawns/Bishops travel along a unique path and never occupy the same square at the same time. But here the path is longer: a6-a5-a4-a3-a2-a1B-b2- c1-d2-e1-g3-f4-h6-f8-e7-d8-c7-b8-a7. Each pawn/Bishop makes 17 moves, so the number of feasible permutations of the $2 \times17 = 34$ moves is the 17th Catalan number. The prohibition against checking before the final move of Black’s sequence is used extensively: Black’s cluster around the h1 corner, which serves only to block an alternative path through h4 and g5 (instead of g3-f4), is immobile because moving the Knight from g1 to either f3 or e2 would check the Kd4; likewise neither Black pawn may promote to a Knight (which could reach a7 or b8 more quickly than a Bishop), because the first move of a Knight from a1 would check White’s King from b3 or c2; and the Black Bishops must detour around the White pawns at c3,e3,f6 because capturing any of those pawns would again check the White King. The c5 pawn blocks the line a7–d4 so that the b6-pawn is not pinned by a Black Ba7 and may move to b7 to give checkmate. Hence result. \\ \\
+\end{proof}
+
+\begin{problem}{II}
+How many shortest games are there in figure 2?
+\end{problem}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2in]{pictwo.png} 
+   \caption{Problem II}
+   \label{fig:example}
+\end{figure}
+
+\begin{proof}
+There are $E_9 = 7936$ solutions of the minimal length of 10 moves. (As usual a "move" comprises both a White and a Black turn). \\ \\ 
+Since White is in check from the Pb4, that pawn must have made the last move, necessarily a capture from c5, and the only missing White unit is the dark-square Bishop. We quickly deduce that White must have played at least 10 moves, and could play exactly 10 only if they were b3,Ba3,Bb4,Na3,Qb1,Kd1,Kc1,Kb2,Kc3,Qb2 in this order. Black also needs 10 moves to reach the diagram, and there is only one set of 10 moves that attains this: a5,b5,c5,c5xb4,e5,e4,Ra7,Ba6,Qb6,Ke7. We saw that c5xb4 must be played last, but there are many choices for the order of the remaining 9 moves. By writing the constraints as \\ \\
+\centerline{$Ra7 > a5 < Ba6 > b5 < Qb6 > c5 < Ke7 > e5 < e4$} \\ \\
+we obtain a bijection between the feasible orders and the up-down permutations of order 9, and find that there are $E_9 = 7936$ feasible orders. Hence result. \\ \\
+\end{proof}
+
+\begin{problem}{III}
+How many shortest games are there in figure 3?
+\end{problem}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=2in]{picthree.png} 
+   \caption{Problem III}
+   \label{fig:example}
+\end{figure}
+
+\begin{proof}
+Exactly $10^6$. \\ \\
+White and Black play independently, and each can reach the position in 1000 ways in the minimal number of moves (14 for White, 13 for Black). Curiously neither the White nor the Black enumeration uses the factorization $1000 = 10 \times 10 \times 10$ or $1000 = 2^3 \times 5^3$, though the factor $2 \times 4$ does figure in the Black enumeration. White's 1000 is ${14 \choose 4} -1$:the 4- and 10-move sequences b4,Bb2,Bd4,Be3 and 4 e4,Ne2,Ng3,Be2,0-0,Re1,Nf1,g3,Kg2,Kh3 are independent except for the condition that e4 must precede Be3. Black’s 1000 is$2 \times 4 \times ({9 \choose 4}-1)$. Black starts a5,a4,Ra5,Rf5. Then the
+4-move sequence b5,Bb7,Bd5,Be6 is independent of the 5-move set e5,Qg5,Nf6,Kd8,Bd6 as long as e5 precedes Be6. Of the latter 5 moves, e5 must come first, but then Black has choices: Nf6 and Kd8 can be played in either order after Qg5, and Bd6 can be interpolated in any of 4 spots, whence the factors of 2 and 4. Note that there is no danger of White’s King being in check on g2 from Black’s Bishop on b7 or d5, because White’s move e4 always precedes Kg2; nor of the King’s being in check on h3, because Black’s Rf5 always precedes Be6. In White’s sequence it might seem that 0-0 could be replaced by Kf1, but this would lead to a vicious circle: g3 must then precede Kg2, which must precede Re1, which must precede Nf1, which must precede g3 — contradiction. Hence White castles to get the King out of the way. Hence result \\ \\
+
+\end{proof}
+
+Citation: Elkies, Noam D. “New Directions in Enumerative Chess Problems.” pp. 1-14. Electronic Combinatorial Journals, 25 Aug. 2005
+
+
+
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+\end{document}
